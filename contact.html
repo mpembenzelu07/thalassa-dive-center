@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Thalassa Dive Center - Book Your Dive Adventure</title>
+    <title>Contact Us | Thalassa Dive Center - Dar es Salaam Dive Center</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
@@ -307,6 +307,26 @@
             transform: translateY(-3px);
         }
         
+        /* ===== WHATSAPP BUTTON ===== */
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #25D366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: transform 0.3s;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            color: white;
+        }
+        
         /* ===== MAP SECTION ===== */
         .map-section {
             background: #f0f8ff;
@@ -374,7 +394,9 @@
         }
         
         .btn-callout {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             padding: 15px 40px;
             background: white;
             color: #0077b6;
@@ -619,7 +641,7 @@
     <section class="page-header">
         <div class="container">
             <h1>Get In Touch</h1>
-            <p>Ready to dive into your next adventure? Contact us to book your dive, ask questions, or plan your perfect underwater experience in Tanzania.</p>
+            <p>Ready to dive into your next adventure? Contact Thalassa Dive Center to book your dive, ask questions, or plan your perfect underwater experience in Dar es Salaam.</p>
         </div>
     </section>
 
@@ -648,19 +670,19 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" class="form-control">
+                            <label for="phone">Phone Number (WhatsApp)</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Include country code">
                         </div>
                         
                         <div class="form-group">
                             <label for="service">Service Interested In *</label>
                             <select id="service" class="form-control" required>
                                 <option value="">Select a service</option>
-                                <option value="scuba-diving">Scuba Diving</option>
-                                <option value="padi-courses">PADI Courses</option>
-                                <option value="dive-trips">Dive Trips</option>
+                                <option value="discover-scuba">Discover Scuba Diving</option>
+                                <option value="padi-courses">PADI Courses (Open Water, Advanced, etc.)</option>
+                                <option value="guided-dives">Guided Recreational Dives</option>
                                 <option value="snorkeling">Snorkeling Tours</option>
-                                <option value="equipment">Equipment Rental</option>
+                                <option value="equipment">Equipment Rental & Air Fills</option>
                                 <option value="other">Other Inquiry</option>
                             </select>
                         </div>
@@ -678,13 +700,13 @@
                                 <option value="3">3 people</option>
                                 <option value="4">4 people</option>
                                 <option value="5">5+ people</option>
-                                <option value="group">Group (10+)</option>
+                                <option value="group">Group (8+)</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
                             <label for="message">Your Message *</label>
-                            <textarea id="message" class="form-control" required></textarea>
+                            <textarea id="message" class="form-control" required placeholder="Tell us about your diving experience level, any specific requests, or questions..."></textarea>
                         </div>
                         
                         <div class="form-actions">
@@ -703,13 +725,12 @@
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div class="info-content">
-                                <h4>Our Locations</h4>
-                                <p><strong>Zanzibar Office:</strong><br>
-                                P.O. Box 1234, Stone Town<br>
-                                Zanzibar, Tanzania</p>
-                                <p><strong>Mafia Island Base:</strong><br>
-                                Mafia Island Marine Park<br>
-                                Chole Bay, Tanzania</p>
+                                <h4>Our Location</h4>
+                                <p><strong>Thalassa Dive Center</strong><br>
+                                Shop 17C, Maga Beach<br>
+                                Slipway Area, Masaki<br>
+                                Dar es Salaam, Tanzania</p>
+                                <p><em>Located on the Msasani/Slipway Peninsula near popular waterfront areas, restaurants, and hotels.</em></p>
                             </div>
                         </div>
                         
@@ -718,10 +739,14 @@
                                 <i class="fas fa-phone"></i>
                             </div>
                             <div class="info-content">
-                                <h4>Phone Numbers</h4>
-                                <p><strong>Main Office:</strong> +255 777 123 456</p>
-                                <p><strong>Emergency:</strong> +255 777 987 654</p>
-                                <p><strong>WhatsApp:</strong> +255 777 123 456</p>
+                                <h4>Phone & WhatsApp</h4>
+                                <p><strong>Primary Contact:</strong><br>
+                                +255 769 474 643</p>
+                                <p><em>We prefer WhatsApp for quick responses and booking confirmations.</em></p>
+                                <a href="https://wa.me/255769474643" class="whatsapp-btn" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                    Message on WhatsApp
+                                </a>
                             </div>
                         </div>
                         
@@ -730,13 +755,10 @@
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div class="info-content">
-                                <h4>Email Addresses</h4>
-                                <p><strong>General Inquiries:</strong><br>
-                                info@thalassadive.com</p>
-                                <p><strong>Bookings:</strong><br>
-                                bookings@thalassadive.com</p>
-                                <p><strong>Courses:</strong><br>
-                                courses@thalassadive.com</p>
+                                <h4>Email Address</h4>
+                                <p><strong>General Inquiries & Bookings:</strong><br>
+                                info@thalassatz.com</p>
+                                <p><em>We typically respond within 24 hours.</em></p>
                             </div>
                         </div>
                         
@@ -747,8 +769,9 @@
                             <div class="info-content">
                                 <h4>Operating Hours</h4>
                                 <p><strong>Daily:</strong> 7:00 AM - 6:00 PM</p>
-                                <p><strong>Dive Departures:</strong> 8:30 AM & 1:30 PM</p>
+                                <p><strong>Dive Departures:</strong> Typically 8:30 AM & 1:30 PM</p>
                                 <p><strong>Office Hours:</strong> 8:00 AM - 5:00 PM</p>
+                                <p><em>Advance booking recommended, especially for weekends and holidays.</em></p>
                             </div>
                         </div>
                     </div>
@@ -761,18 +784,20 @@
                             <a href="#" class="social-link-contact">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="#" class="social-link-contact">
+                            <a href="https://instagram.com/thalassatz" class="social-link-contact" target="_blank">
                                 <i class="fab fa-instagram"></i>
                             </a>
                             <a href="#" class="social-link-contact">
                                 <i class="fab fa-twitter"></i>
                             </a>
                             <a href="#" class="social-link-contact">
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                            <a href="#" class="social-link-contact">
                                 <i class="fab fa-tripadvisor"></i>
                             </a>
+                        </div>
+                        
+                        <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee;">
+                            <h4 style="color: #023e8a; margin-bottom: 10px; font-size: 1.1rem;">PADI Registered</h4>
+                            <p style="color: #666; font-size: 14px;">We are a PADI-registered dive center featured in the PADI directory. Look for us when searching for certified dive operators in Tanzania.</p>
                         </div>
                     </div>
                 </div>
@@ -784,17 +809,38 @@
     <section class="section map-section">
         <div class="container">
             <div class="section-title">
-                <h2>Find Us</h2>
-                <p>Visit our dive centers in Zanzibar and Mafia Island</p>
+                <h2>Find Us in Dar es Salaam</h2>
+                <p>Visit our dive center in the vibrant Maga Beach/Slipway area of Masaki</p>
             </div>
             
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15867.373379641987!2d39.189114375940384!3d-6.161456830275577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185cd059242fbd01%3A0x9a18e6b0d3c9150!2sStone%20Town%2C%20Zanzibar%2C%20Tanzania!5e0!3m2!1sen!2s!4v1701456784567!5m2!1sen!2s" 
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.3450747040634!2d39.270813575905976!3d-6.749848365911145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4f0a5ac2bda5%3A0xef0d5b4d14cdb06a!2sSlipway%2C%20Dar%20es%20Salaam%2C%20Tanzania!5e0!3m2!1sen!2s!4v1701456784567!5m2!1sen!2s" 
                         class="map-frame" 
                         allowfullscreen="" 
                         loading="lazy" 
                         referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <h3 style="color: #023e8a; margin-bottom: 15px;">How to Reach Us</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                        <i class="fas fa-taxi" style="color: #00b4d8; font-size: 24px; margin-bottom: 10px;"></i>
+                        <h4 style="color: #023e8a; margin-bottom: 10px;">By Taxi/Bolt</h4>
+                        <p style="color: #666; font-size: 14px;">Ask for "Slipway, Masaki" or "Maga Beach, Masaki". Most drivers know the area well.</p>
+                    </div>
+                    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                        <i class="fas fa-car" style="color: #00b4d8; font-size: 24px; margin-bottom: 10px;"></i>
+                        <h4 style="color: #023e8a; margin-bottom: 10px;">By Car</h4>
+                        <p style="color: #666; font-size: 14px;">Parking available in the Slipway complex area. Look for Shop 17C at Maga Beach.</p>
+                    </div>
+                    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                        <i class="fas fa-ship" style="color: #00b4d8; font-size: 24px; margin-bottom: 10px;"></i>
+                        <h4 style="color: #023e8a; margin-bottom: 10px;">By Boat</h4>
+                        <p style="color: #666; font-size: 14px;">Direct waterfront access for dive boat departures from our location.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -805,37 +851,50 @@
             <div class="faq-section">
                 <div class="section-title">
                     <h2>Booking Information</h2>
-                    <p>Common questions about booking and preparing for your dive</p>
+                    <p>Common questions about booking and preparing for your dive with Thalassa</p>
                 </div>
                 
                 <div class="faq-grid">
                     <div class="faq-item">
                         <h4>How far in advance should I book?</h4>
-                        <p>We recommend booking at least 1-2 weeks in advance, especially during peak season (June-October). For PADI courses, 2-3 weeks notice is ideal to ensure availability.</p>
+                        <p>We recommend booking at least 2-3 days in advance, especially for PADI courses. Weekends and holidays book up quickly, so 1-2 weeks notice is ideal during peak seasons.</p>
                     </div>
                     
                     <div class="faq-item">
                         <h4>What is your cancellation policy?</h4>
-                        <p>Cancellations made 48+ hours before departure receive a full refund. 24-48 hours notice receives 50% refund. Less than 24 hours notice is non-refundable.</p>
+                        <p>Cancellations made 48+ hours before departure receive a full refund. 24-48 hours notice receives 50% refund. Less than 24 hours notice is non-refundable due to boat and guide arrangements.</p>
                     </div>
                     
                     <div class="faq-item">
                         <h4>Do I need to pay a deposit?</h4>
-                        <p>Yes, we require a 30% deposit to confirm your booking. The balance is payable on the day of your dive or course.</p>
+                        <p>Yes, we require a 30% deposit to confirm your booking, payable via mobile money or bank transfer. The balance is payable on the day of your dive or course at our center.</p>
                     </div>
                     
                     <div class="faq-item">
                         <h4>What payment methods do you accept?</h4>
-                        <p>We accept cash (USD/TZS), credit cards (Visa/Mastercard), and bank transfers. Credit card payments incur a 3% processing fee.</p>
+                        <p>We accept cash (TZS/USD), mobile money (M-Pesa, Tigo Pesa, Airtel Money), and bank transfers. Credit card payments may be arranged in advance with a small processing fee.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Do you provide equipment?</h4>
+                        <p>Yes, all necessary diving equipment is included in our dive packages and courses. We have modern, well-maintained gear in all sizes. Equipment rental is also available separately.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>What should I bring?</h4>
+                        <p>Swimwear, towel, sunscreen (reef-safe preferred), and any personal medication. We provide drinking water. For full-day trips, you may want to bring snacks or we can arrange lunch.</p>
                     </div>
                 </div>
             </div>
             
             <!-- Booking Callout -->
             <div class="booking-callout">
-                <h2>Ready to Dive?</h2>
-                <p>Join us for an unforgettable underwater adventure in Tanzania's most beautiful dive sites. Whether you're a beginner or experienced diver, we have the perfect experience for you.</p>
-                <a href="#contactForm" class="btn-callout">Book Your Dive Now</a>
+                <h2>Ready to Dive in Dar es Salaam?</h2>
+                <p>Join us for an unforgettable underwater adventure. Rated 4.3 stars by our community of divers. PADI certified instruction for all levels.</p>
+                <a href="https://wa.me/255769474643" class="btn-callout" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    Book via WhatsApp Now
+                </a>
             </div>
         </div>
     </section>
@@ -852,10 +911,10 @@
                             <div class="footer-logo-sub">DIVE CENTER</div>
                         </div>
                     </div>
-                    <p class="footer-description">Tanzania's premier diving and snorkeling center offering unforgettable underwater experiences since 2005.</p>
+                    <p class="footer-description">Dar es Salaam's premier PADI-registered dive center located at Maga Beach, offering diving and snorkeling experiences with a 4.3-star rating.</p>
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://instagram.com/thalassatz" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-tripadvisor"></i></a>
                     </div>
@@ -876,16 +935,17 @@
                 <div class="footer-col">
                     <h3>Contact Info</h3>
                     <div class="contact-info-footer">
-                        <p><i class="fas fa-map-marker-alt"></i> <span>P.O. Box 1234<br>Stone Town, Zanzibar<br>Tanzania</span></p>
-                        <p><i class="fas fa-phone"></i> <span>+255 777 123 456</span></p>
-                        <p><i class="fas fa-envelope"></i> <span>info@thalassadive.com</span></p>
+                        <p><i class="fas fa-map-marker-alt"></i> <span>Shop 17C, Maga Beach<br>Slipway Area, Masaki<br>Dar es Salaam, Tanzania</span></p>
+                        <p><i class="fas fa-phone"></i> <span>+255 769 474 643</span></p>
+                        <p><i class="fab fa-whatsapp"></i> <span>WhatsApp: +255 769 474 643</span></p>
+                        <p><i class="fas fa-envelope"></i> <span>info@thalassatz.com</span></p>
                         <p><i class="fas fa-clock"></i> <span>Open Daily: 7:00 AM - 6:00 PM</span></p>
                     </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2023 Thalassa Dive Center. All rights reserved. | Designed for Marine Adventure Lovers</p>
+                <p>&copy; 2023 Thalassa Dive Center. PADI Registered Dive Center. All rights reserved. | Rated 4.3⭐ by our diving community</p>
             </div>
         </div>
     </footer>
@@ -919,12 +979,19 @@
             const message = document.getElementById('message').value;
             
             if (!firstName || !email || !service || !message) {
-                alert('Please fill in all required fields.');
+                alert('Please fill in all required fields marked with *.');
                 return;
             }
             
-            // In a real application, this would be an AJAX call to your server
-            alert('Thank you for your message! We will get back to you within 24 hours.');
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // Show success message
+            alert('Thank you for your message! We will contact you within 24 hours. For immediate assistance, you can also WhatsApp us at +255 769 474 643.');
             contactForm.reset();
             
             // Scroll to thank you message
@@ -939,12 +1006,32 @@
         const today = new Date().toISOString().split('T')[0];
         dateInput.min = today;
         
+        // Set maximum date to 6 months from today
+        const maxDate = new Date();
+        maxDate.setMonth(maxDate.getMonth() + 6);
+        dateInput.max = maxDate.toISOString().split('T')[0];
+        
         // Smooth scroll for booking callout button
         document.querySelector('.btn-callout').addEventListener('click', function(e) {
+            if (this.getAttribute('href') !== '#contactForm') {
+                return; // Only smooth scroll if linking to form
+            }
             e.preventDefault();
             document.querySelector('#contactForm').scrollIntoView({
                 behavior: 'smooth'
             });
+        });
+        
+        // Auto-format phone number for WhatsApp
+        const phoneInput = document.getElementById('phone');
+        phoneInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.startsWith('0')) {
+                value = '+255' + value.substring(1);
+            } else if (!value.startsWith('+')) {
+                value = '+' + value;
+            }
+            e.target.value = value;
         });
     </script>
 </body>
