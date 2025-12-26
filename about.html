@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Thalassa Dive Center - Tanzania's Premier Dive Center</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            font-size: 28px;
+            color: #00b4d8;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #023e8a;
+        }
+        
+        .logo-main {
+            font-size: 24px;
+            line-height: 1;
+        }
+        
+        .logo-sub {
+            font-size: 12px;
+            color: #0077b6;
+            letter-spacing: 1px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 5px 0;
+        }
+        
+        nav a:hover, nav a.active {
+            color: #00b4d8;
+            border-bottom: 2px solid #00b4d8;
+        }
+        
+        .btn-book {
+            background: #00b4d8;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .btn-book:hover {
+            background: #0077b6;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* ===== PAGE HEADER ===== */
+        .page-header {
+            background: linear-gradient(rgba(2, 62, 138, 0.8), rgba(0, 119, 182, 0.8)), 
+                        url('https://images.unsplash.com/photo-1568483976758-ea53bb6fd3c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 100px;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #023e8a;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* ===== OUR STORY ===== */
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .story-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .story-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .story-content h3 {
+            color: #023e8a;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        .story-content p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: #f0f8ff;
+            border-radius: 10px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #00b4d8;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #023e8a;
+            font-weight: 600;
+        }
+        
+        /* ===== OUR TEAM ===== */
+        .team-section {
+            background: #f0f8ff;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .team-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .team-content {
+            padding: 25px;
+        }
+        
+        .team-content h3 {
+            color: #023e8a;
+            margin-bottom: 5px;
+        }
+        
+        .team-role {
+            color: #00b4d8;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .team-certifications {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .cert-badge {
+            background: #e3f2fd;
+            color: #0077b6;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+        
+        .team-bio {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .team-social {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .team-social a {
+            width: 35px;
+            height: 35px;
+            background: #f0f8ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0077b6;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .team-social a:hover {
+            background: #00b4d8;
+            color: white;
+        }
+        
+        /* ===== VALUES ===== */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #00b4d8, #0077b6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 30px;
+        }
+        
+        .value-card h3 {
+            color: #023e8a;
+            margin-bottom: 15px;
+        }
+        
+        .value-card p {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        /* ===== FACILITIES ===== */
+        .facilities-section {
+            background: #f0f8ff;
+        }
+        
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .facility-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .facility-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .facility-content {
+            padding: 25px;
+        }
+        
+        .facility-content h3 {
+            color: #023e8a;
+            margin-bottom: 10px;
+        }
+        
+        .facility-content p {
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        /* ===== CERTIFICATIONS ===== */
+        .certifications {
+            text-align: center;
+            padding: 60px 0;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .cert-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .cert-logo {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+        
+        .cert-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+        
+        .cert-logo img {
+            max-height: 100%;
+            max-width: 150px;
+        }
+        
+        /* ===== TESTIMONIALS ===== */
+        .testimonials-section {
+            background: linear-gradient(rgba(2, 62, 138, 0.9), rgba(0, 119, 182, 0.9)), 
+                        url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        
+        .testimonials-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial {
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .testimonial-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .testimonial-text:before {
+            content: '"';
+            font-size: 4rem;
+            color: rgba(255,255,255,0.2);
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .client-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .client-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            border: 3px solid #00b4d8;
+        }
+        
+        .client-details h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .client-details p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        .rating {
+            color: #ffd700;
+            margin-top: 5px;
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background: #023e8a;
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo i {
+            font-size: 32px;
+            color: #00b4d8;
+        }
+        
+        .footer-logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .footer-logo-main {
+            font-size: 22px;
+            font-weight: 700;
+        }
+        
+        .footer-logo-sub {
+            font-size: 12px;
+            color: #90e0ef;
+        }
+        
+        .footer-description {
+            opacity: 0.8;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background: #00b4d8;
+            transform: translateY(-3px);
+        }
+        
+        .footer-col h3 {
+            color: #00b4d8;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #00b4d8;
+            padding-left: 5px;
+        }
+        
+        .contact-info p {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .contact-info i {
+            color: #00b4d8;
+            margin-top: 3px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.6;
+            font-size: 14px;
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .story-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            nav ul {
+                display: none;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 120px 0 80px;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .team-grid,
+            .values-grid,
+            .facilities-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cert-logos {
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-text {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-water logo-icon"></i>
+                <div class="logo-text">
+                    <div class="logo-main">THALASSA</div>
+                    <div class="logo-sub">DIVE CENTER</div>
+                </div>
+            </a>
+            
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="dives.html">Dive Trips</a></li>
+                    <li><a href="snorkeling.html">Snorkeling</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="contact.html" class="btn-book">Book Now</a></li>
+                </ul>
+            </nav>
+            
+            <div class="mobile-menu" id="mobileMenu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Story</h1>
+            <p>For over 15 years, Thalassa Dive Center has been sharing the wonders of Tanzania's underwater world with adventurers from around the globe.</p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="section">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-image">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Thalassa Dive Center founders">
+                </div>
+                <div class="story-content">
+                    <h3>Passion for the Ocean Since 2005</h3>
+                    <p>Founded by marine biologists Ali Hassan and Sarah Johnson, Thalassa Dive Center began as a small operation with one boat and a dream: to share the incredible marine biodiversity of Tanzania while promoting ocean conservation.</p>
+                    <p>What started as a passion project has grown into Tanzania's most respected dive center, operating in both Zanzibar and Mafia Island. We've trained thousands of divers and introduced even more people to the magic of snorkeling.</p>
+                    <p>Our commitment to safety, education, and environmental stewardship has earned us recognition from PADI and numerous conservation organizations.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">25k+</div>
+                            <div class="stat-label">Dives Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">8</div>
+                            <div class="stat-label">PADI Instructors</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Satisfaction Rate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team -->
+    <section class="section team-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Our Team</h2>
+                <p>Professional, passionate, and dedicated to your underwater adventure</p>
+            </div>
+            
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-card">
+                    <div class="team-img" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');"></div>
+                    <div class="team-content">
+                        <h3>Ali Hassan</h3>
+                        <div class="team-role">Founder & Head Instructor</div>
+                        <div class="team-certifications">
+                            <span class="cert-badge">PADI Course Director</span>
+                            <span class="cert-badge">Marine Biologist</span>
+                            <span class="cert-badge">Emergency First Response</span>
+                        </div>
+                        <p class="team-bio">With over 5,000 dives logged, Ali brings unparalleled expertise and passion for marine conservation to every dive.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-card">
+                    <div class="team-img" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');"></div>
+                    <div class="team-content">
+                        <h3>Sarah Johnson</h3>
+                        <div class="team-role">Co-Founder & Operations Manager</div>
+                        <div class="team-certifications">
+                            <span class="cert-badge">PADI Master Instructor</span>
+                            <span class="cert-badge">Equipment Specialist</span>
+                            <span class="cert-badge">Dive Medic</span>
+                        </div>
+                        <p class="team-bio">Sarah ensures every aspect of your dive experience is seamless, safe, and unforgettable.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-card">
+                    <div class="team-img" style="background-image: url('https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');"></div>
+                    <div class="team-content">
+                        <h3>Juma Mohamed</h3>
+                        <div class="team-role">Senior Dive Guide</div>
+                        <div class="team-certifications">
+                            <span class="cert-badge">PADI IDC Staff</span>
+                            <span class="cert-badge">Deep Diver</span>
+                            <span class="cert-badge">Night Diver</span>
+                        </div>
+                        <p class="team-bio">Born and raised in Zanzibar, Juma knows every coral garden and dive site like the back of his hand.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide everything we do</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Safety First</h3>
+                    <p>Maintaining the highest safety standards with modern equipment, regular maintenance, and thorough briefings.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Conservation</h3>
+                    <p>Promoting sustainable diving practices and supporting local marine conservation initiatives.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Education</h3>
+                    <p>Empowering divers with knowledge about marine ecosystems and responsible diving practices.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Passion</h3>
+                    <p>Sharing our genuine love for the ocean with every diver and snorkeler who joins us.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities -->
+    <section class="section facilities-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Facilities</h2>
+                <p>Modern equipment and comfortable facilities for your diving adventure</p>
+            </div>
+            
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <div class="facility-img" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');"></div>
+                    <div class="facility-content">
+                        <h3>Modern Dive Center</h3>
+                        <p>Air-conditioned briefing rooms, equipment storage, and retail shop with all the diving essentials.</p>
+                    </div>
+                </div>
+                
+                <div class="facility-card">
+                    <div class="facility-img" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');"></div>
+                    <div class="facility-content">
+                        <h3>Fleet of Dive Boats</h3>
+                        <p>Four modern dive boats equipped with safety gear, oxygen, and comfortable seating.</p>
+                    </div>
+                </div>
+                
+                <div class="facility-card">
+                    <div class="facility-img" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');"></div>
+                    <div class="facility-content">
+                        <h3>Equipment Maintenance</h3>
+                        <p>On-site equipment maintenance and repair facility ensuring all gear is in perfect condition.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="section">
+        <div class="container">
+            <div class="certifications">
+                <h2 style="color: #023e8a; margin-bottom: 10px;">Certifications & Awards</h2>
+                <p style="color: #666; margin-bottom: 30px;">Recognized for excellence in diving instruction and safety</p>
+                
+                <div class="cert-logos">
+                    <div class="cert-logo">
+                        <img src="https://www.padi.com/sites/all/themes/custom/padi/logo.svg" alt="PADI">
+                    </div>
+                    <div class="cert-logo">
+                        <i class="fas fa-award" style="font-size: 60px; color: #00b4d8;"></i>
+                    </div>
+                    <div class="cert-logo">
+                        <img src="https://www.projectaware.org/sites/all/themes/custom/projectaware/logo.png" alt="Project AWARE" style="max-width: 180px;">
+                    </div>
+                    <div class="cert-logo">
+                        <i class="fas fa-star" style="font-size: 60px; color: #00b4d8;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">What Our Divers Say</h2>
+                <p style="color: rgba(255,255,255,0.9);">Join thousands of satisfied divers who have explored with us</p>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "The best diving experience of my life! The team at Thalassa was professional, knowledgeable, and made me feel completely safe throughout my Advanced Open Water course."
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar" style="background-image: url('https://randomuser.me/api/portraits/men/32.jpg');"></div>
+                        <div class="client-details">
+                            <h4>Michael Chen</h4>
+                            <p>Advanced Open Water Diver</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-water"></i>
+                        <div class="footer-logo-text">
+                            <div class="footer-logo-main">THALASSA</div>
+                            <div class="footer-logo-sub">DIVE CENTER</div>
+                        </div>
+                    </div>
+                    <p class="footer-description">Tanzania's premier diving and snorkeling center offering unforgettable underwater experiences since 2005.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Diving Services</a></li>
+                        <li><a href="courses.html">PADI Courses</a></li>
+                        <li><a href="dives.html">Dive Trips</a></li>
+                        <li><a href="snorkeling.html">Snorkeling Tours</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> <span>P.O. Box 1234<br>Stone Town, Zanzibar<br>Tanzania</span></p>
+                        <p><i class="fas fa-phone"></i> <span>+255 777 123 456</span></p>
+                        <p><i class="fas fa-envelope"></i> <span>info@thalassadive.com</span></p>
+                        <p><i class="fas fa-clock"></i> <span>Open Daily: 7:00 AM - 6:00 PM</span></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Thalassa Dive Center. All rights reserved. | Designed for Marine Adventure Lovers</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !mobileMenu.contains(e.target)) {
+                navMenu.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
