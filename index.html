@@ -1,295 +1,211 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thalassa Dive Center | PADI Certified Diving in Dar es Salaam</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
+        /* Reset & Base */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
-        :root {
-            --primary-blue: #0A2463;
-            --secondary-blue: #1E96FC;
-            --accent-teal: #3ECFC3;
-            --light-blue: #E9F5FF;
-            --dark-blue: #051937;
-            --text-dark: #333333;
-            --text-light: #ffffff;
-            --shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-            --transition: all 0.3s ease;
-        }
-        
         body {
             font-family: 'Open Sans', sans-serif;
-            color: var(--text-dark);
+            color: #333;
             line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        h1, h2, h3, h4, h5 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            line-height: 1.3;
+            background: #f8f9fa;
         }
         
         .container {
-            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
         
-        /* Language Switcher */
-        .language-switcher {
-            position: relative;
-            display: flex;
-            align-items: center;
-            margin-left: 20px;
-        }
-        
-        .language-btn {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 30px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            transition: var(--transition);
-            font-weight: 600;
-            font-size: 14px;
-        }
-        
-        .language-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-        
-        .language-btn i {
-            margin-right: 8px;
-        }
-        
-        .language-dropdown {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: white;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-            min-width: 150px;
-            display: none;
-            z-index: 1000;
-            margin-top: 10px;
-        }
-        
-        .language-dropdown.active {
-            display: block;
-        }
-        
-        .language-option {
-            padding: 12px 20px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            transition: var(--transition);
-            color: var(--text-dark);
-            text-decoration: none;
-        }
-        
-        .language-option:hover {
-            background: var(--light-blue);
-            color: var(--primary-blue);
-        }
-        
-        .language-option.active {
-            background: var(--light-blue);
-            color: var(--primary-blue);
-            font-weight: 600;
-        }
-        
-        .language-flag {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            margin-right: 10px;
-            object-fit: cover;
-        }
-        
-        /* Header & Navigation */
+        /* Header */
         header {
-            background-color: rgba(10, 36, 99, 0.95);
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
             width: 100%;
+            top: 0;
             z-index: 1000;
-            padding: 15px 0;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
         }
         
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 15px 0;
         }
         
         .logo {
             display: flex;
             align-items: center;
-            color: white;
             text-decoration: none;
         }
         
         .logo-icon {
             font-size: 28px;
+            color: #00b4d8;
             margin-right: 10px;
-            color: var(--accent-teal);
         }
         
         .logo-text {
-            font-size: 24px;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 700;
+            color: #023e8a;
         }
         
-        .logo-text span {
-            color: var(--accent-teal);
+        .logo-main {
+            font-size: 24px;
+            line-height: 1;
         }
         
+        .logo-sub {
+            font-size: 12px;
+            color: #0077b6;
+            letter-spacing: 1px;
+        }
+        
+        /* Navigation */
         nav ul {
             display: flex;
             list-style: none;
+            gap: 30px;
             align-items: center;
         }
         
-        nav ul li {
-            margin-left: 20px;
-        }
-        
-        nav ul li a {
-            color: white;
+        nav a {
             text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: var(--transition);
-            padding: 8px 0;
-            position: relative;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
         }
         
-        nav ul li a:hover {
-            color: var(--accent-teal);
+        nav a:hover {
+            color: #00b4d8;
         }
         
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--accent-teal);
-            bottom: 0;
-            left: 0;
-            transition: var(--transition);
+        .language-switch {
+            background: #f1f1f1;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         
-        nav ul li a:hover::after {
-            width: 100%;
+        .language-switch i {
+            color: #00b4d8;
         }
         
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
+        .btn-book {
+            background: #00b4d8;
             color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .btn-book:hover {
+            background: #0077b6;
+        }
+        
+        .mobile-menu {
+            display: none;
             font-size: 24px;
             cursor: pointer;
         }
         
         /* Hero Section */
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(5, 25, 55, 0.85), rgba(5, 25, 55, 0.7)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(2, 62, 138, 0.8), rgba(0, 119, 182, 0.8)), 
+                        url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            color: white;
             text-align: center;
+            color: white;
             padding-top: 80px;
         }
         
         .hero-content {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
         }
         
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
         .padi-badge {
-            background-color: rgba(255, 255, 255, 0.15);
+            background: rgba(255,255,255,0.2);
             display: inline-flex;
             align-items: center;
-            padding: 8px 20px;
-            border-radius: 50px;
+            gap: 10px;
+            padding: 12px 25px;
+            border-radius: 30px;
             margin-bottom: 30px;
             backdrop-filter: blur(5px);
         }
         
         .padi-badge i {
             color: #ff6b35;
-            margin-right: 10px;
-            font-size: 24px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         
         .btn {
-            display: inline-block;
             padding: 15px 35px;
-            border-radius: 50px;
-            font-weight: 600;
+            border-radius: 30px;
             text-decoration: none;
-            transition: var(--transition);
-            cursor: pointer;
-            border: none;
-            font-size: 16px;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s;
         }
         
         .btn-primary {
-            background-color: var(--accent-teal);
-            color: var(--dark-blue);
+            background: #00b4d8;
+            color: white;
         }
         
         .btn-primary:hover {
-            background-color: #2db9ae;
+            background: #0077b6;
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
         
         .btn-secondary {
-            background-color: transparent;
+            background: transparent;
             color: white;
             border: 2px solid white;
-            margin-left: 15px;
         }
         
         .btn-secondary:hover {
-            background-color: white;
-            color: var(--dark-blue);
+            background: white;
+            color: #0077b6;
             transform: translateY(-3px);
         }
         
@@ -300,46 +216,35 @@
         
         .section-title {
             text-align: center;
-            margin-bottom: 70px;
+            margin-bottom: 50px;
         }
         
         .section-title h2 {
             font-size: 2.5rem;
-            color: var(--primary-blue);
+            color: #023e8a;
             margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            width: 70px;
-            height: 4px;
-            background: var(--accent-teal);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
         }
         
         .section-title p {
             color: #666;
-            max-width: 700px;
+            max-width: 600px;
             margin: 0 auto;
         }
         
+        /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            margin-top: 50px;
         }
         
         .service-card {
             background: white;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
         }
         
         .service-card:hover {
@@ -356,8 +261,14 @@
             padding: 25px;
         }
         
+        .service-icon {
+            font-size: 40px;
+            color: #00b4d8;
+            margin-bottom: 15px;
+        }
+        
         .service-content h3 {
-            color: var(--primary-blue);
+            color: #023e8a;
             margin-bottom: 15px;
             font-size: 1.5rem;
         }
@@ -367,376 +278,314 @@
             margin-bottom: 20px;
         }
         
-        .service-icon {
-            font-size: 40px;
-            color: var(--accent-teal);
-            margin-bottom: 20px;
-        }
-        
-        /* About Section */
-        .about {
-            background-color: var(--light-blue);
-        }
-        
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-        
-        .about-text h3 {
-            font-size: 2rem;
-            color: var(--primary-blue);
-            margin-bottom: 20px;
-        }
-        
-        .about-features {
-            margin-top: 30px;
-        }
-        
-        .feature {
-            display: flex;
-            margin-bottom: 20px;
-        }
-        
-        .feature i {
-            color: var(--accent-teal);
-            font-size: 20px;
-            margin-right: 15px;
-            margin-top: 5px;
-        }
-        
-        .about-image {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        /* Gallery Section */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        
-        .gallery-item {
-            border-radius: 8px;
-            overflow: hidden;
-            height: 250px;
-            position: relative;
-            cursor: pointer;
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-        
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        .gallery-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(5, 25, 55, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: var(--transition);
-        }
-        
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-        
-        .gallery-overlay i {
-            color: white;
-            font-size: 40px;
-        }
-        
-        /* Contact & Booking */
-        .contact {
-            background-color: var(--dark-blue);
-            color: white;
-        }
-        
-        .contact .section-title h2,
-        .contact .section-title p {
-            color: white;
-        }
-        
-        .booking-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-        }
-        
-        .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            color: var(--accent-teal);
-        }
-        
-        .contact-details {
-            margin-bottom: 40px;
-        }
-        
-        .contact-item {
-            display: flex;
-            margin-bottom: 20px;
-            align-items: flex-start;
-        }
-        
-        .contact-item i {
-            color: var(--accent-teal);
-            font-size: 20px;
-            margin-right: 15px;
-            margin-top: 5px;
-        }
-        
-        .social-links {
-            display: flex;
-            margin-top: 30px;
-        }
-        
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            margin-right: 15px;
-            color: white;
+        .service-link {
+            color: #00b4d8;
             text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .social-link:hover {
-            background: var(--accent-teal);
-            transform: translateY(-5px);
-        }
-        
-        .booking-form {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 40px;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-        }
-        
-        .form-group {
-            margin-bottom: 25px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
             font-weight: 600;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 15px;
-            border-radius: 5px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            font-size: 16px;
-            transition: var(--transition);
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--accent-teal);
-        }
-        
-        .whatsapp-btn {
-            background-color: #25D366;
-            color: white;
-            display: inline-flex;
+            display: flex;
             align-items: center;
+            gap: 8px;
+        }
+        
+        /* Quick Info */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+        }
+        
+        .info-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+        
+        .info-card i {
+            font-size: 40px;
+            color: #00b4d8;
+            margin-bottom: 15px;
+        }
+        
+        .info-card h3 {
+            color: #023e8a;
+            margin-bottom: 10px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: #f0f8ff;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stars {
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .testimonial-author strong {
+            color: #023e8a;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #023e8a, #0077b6);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
             justify-content: center;
-            margin-top: 10px;
-            width: 100%;
-        }
-        
-        .whatsapp-btn i {
-            margin-right: 10px;
-            font-size: 20px;
-        }
-        
-        .whatsapp-btn:hover {
-            background-color: #128C7E;
+            flex-wrap: wrap;
         }
         
         /* Footer */
         footer {
-            background-color: var(--primary-blue);
+            background: #023e8a;
             color: white;
             padding: 60px 0 30px;
         }
         
-        .footer-content {
+        .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
         
         .footer-logo {
-            font-size: 28px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo i {
+            font-size: 32px;
+            color: #00b4d8;
+        }
+        
+        .footer-logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .footer-logo-main {
+            font-size: 22px;
             font-weight: 700;
-            margin-bottom: 20px;
-            color: white;
         }
         
-        .footer-logo span {
-            color: var(--accent-teal);
+        .footer-logo-sub {
+            font-size: 12px;
+            color: #90e0ef;
         }
         
-        .footer-about p {
-            margin-bottom: 20px;
+        .footer-description {
             opacity: 0.8;
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
         
-        .footer-heading {
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background: #00b4d8;
+            transform: translateY(-3px);
+        }
+        
+        .footer-col h3 {
+            color: #00b4d8;
+            margin-bottom: 20px;
             font-size: 1.3rem;
-            margin-bottom: 25px;
-            color: var(--accent-teal);
         }
         
-        .footer-links ul {
+        .footer-links {
             list-style: none;
         }
         
-        .footer-links ul li {
-            margin-bottom: 12px;
+        .footer-links li {
+            margin-bottom: 10px;
         }
         
-        .footer-links ul li a {
-            color: rgba(255, 255, 255, 0.8);
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
             text-decoration: none;
-            transition: var(--transition);
+            transition: all 0.3s;
         }
         
-        .footer-links ul li a:hover {
-            color: var(--accent-teal);
+        .footer-links a:hover {
+            color: #00b4d8;
             padding-left: 5px;
         }
         
-        .copyright {
+        .contact-info p {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .contact-info i {
+            color: #00b4d8;
+            margin-top: 3px;
+        }
+        
+        .footer-bottom {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.6;
+            font-size: 14px;
         }
         
-        /* Language Indicator */
-        .lang-indicator {
-            display: inline-block;
-            background: rgba(62, 207, 195, 0.1);
-            color: var(--accent-teal);
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
+        /* Language Selection */
+        .language-selection {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(2, 62, 138, 0.95);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .language-box {
+            background: white;
+            padding: 50px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+        
+        .language-box h2 {
+            color: #023e8a;
+            margin-bottom: 30px;
+        }
+        
+        .language-options {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .language-btn {
+            padding: 20px 30px;
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #333;
             font-weight: 600;
-            margin-left: 5px;
-            vertical-align: middle;
+            transition: all 0.3s;
+            min-width: 150px;
         }
         
-        /* Responsive Styles */
-        @media (max-width: 1100px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-            
-            nav ul li {
-                margin-left: 15px;
-            }
+        .language-btn:hover {
+            background: #00b4d8;
+            color: white;
+            border-color: #00b4d8;
+            transform: translateY(-5px);
         }
         
+        /* Responsive */
         @media (max-width: 992px) {
             .hero h1 {
                 font-size: 2.8rem;
             }
             
-            .about-content,
-            .booking-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
+            nav ul {
+                display: none;
             }
             
-            .language-switcher {
-                margin-left: 10px;
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero-buttons,
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
             }
         }
         
         @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: var(--primary-blue);
-                flex-direction: column;
-                padding: 20px;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-                z-index: 1000;
-            }
-            
-            nav ul.active {
-                display: flex;
-            }
-            
-            nav ul li {
-                margin: 0 0 15px 0;
-                width: 100%;
-            }
-            
-            .language-switcher {
-                margin: 15px 0 0 0;
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-                margin-left: 15px;
-            }
-            
             .hero h1 {
                 font-size: 2.3rem;
-            }
-            
-            .btn-secondary {
-                margin-left: 0;
-                margin-top: 15px;
-                display: inline-block;
             }
             
             .section {
                 padding: 70px 0;
             }
             
-            .header-container {
-                flex-wrap: wrap;
+            .services-grid,
+            .info-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
             }
         }
         
@@ -748,777 +597,574 @@
             .section-title h2 {
                 font-size: 2rem;
             }
-            
-            .booking-form {
-                padding: 25px;
-            }
-            
-            .language-btn {
-                padding: 8px 12px;
-                font-size: 13px;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Header & Navigation -->
-    <header>
-        <div class="container header-container">
-            <a href="#home" class="logo">
+    <!-- Language Selection Screen (First thing users see) -->
+    <div class="language-selection" id="languageSelection">
+        <div class="language-box">
+            <div class="logo" style="justify-content: center; margin-bottom: 30px;">
                 <i class="fas fa-water logo-icon"></i>
-                <div class="logo-text">THALASSA<span>DIVE</span></div>
-            </a>
+                <div class="logo-text">
+                    <div class="logo-main">THALASSA</div>
+                    <div class="logo-sub">DIVE CENTER</div>
+                </div>
+            </div>
             
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
+            <h2>Choose Your Language</h2>
+            <p style="margin-bottom: 30px; color: #666;">Select your preferred language to continue</p>
             
-            <nav>
-                <ul id="mainNav">
-                    <li><a href="#home" data-i18n="nav.home">Home</a></li>
-                    <li><a href="#services" data-i18n="nav.services">Services</a></li>
-                    <li><a href="#about" data-i18n="nav.about">About</a></li>
-                    <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
-                    <li><a href="#contact" data-i18n="nav.contact">Book Now</a></li>
-                    
-                    <!-- Language Switcher -->
-                    <li class="language-switcher">
-                        <div class="language-btn" id="languageBtn">
-                            <i class="fas fa-globe"></i>
-                            <span id="currentLang">English</span>
-                            <i class="fas fa-chevron-down" style="margin-left: 8px;"></i>
-                        </div>
-                        <div class="language-dropdown" id="languageDropdown">
-                            <a href="#" class="language-option active" data-lang="en">
-                                <img src="https://flagcdn.com/w20/gb.png" class="language-flag" alt="English">
-                                English
+            <div class="language-options">
+                <a href="#" class="language-btn" onclick="selectLanguage('en')">
+                    English
+                </a>
+                <a href="#" class="language-btn" onclick="selectLanguage('sw')">
+                    Kiswahili
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content (Hidden until language selected) -->
+    <div id="mainContent" style="display: none;">
+        <!-- Header -->
+        <header>
+            <div class="container header-container">
+                <a href="#home" class="logo">
+                    <i class="fas fa-water logo-icon"></i>
+                    <div class="logo-text">
+                        <div class="logo-main">THALASSA</div>
+                        <div class="logo-sub">DIVE CENTER</div>
+                    </div>
+                </a>
+                
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li>
+                            <a href="#" class="language-switch" onclick="changeLanguage()">
+                                <i class="fas fa-language"></i>
+                                <span id="currentLang">English</span>
                             </a>
-                            <a href="#" class="language-option" data-lang="sw">
-                                <img src="https://flagcdn.com/w20/tz.png" class="language-flag" alt="Swahili">
-                                Kiswahili
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container hero-content">
-            <div class="padi-badge">
-                <i class="fas fa-award"></i>
-                <span data-i18n="hero.padi">PADI Certified Dive Center</span>
-            </div>
-            
-            <h1 data-i18n="hero.title">Explore Underwater Tanzania</h1>
-            <p data-i18n="hero.subtitle">Thalassa Dive Center offers premium PADI-certified diving courses, guided reef explorations, and snorkeling adventures in the crystal-clear waters of Dar es Salaam.</p>
-            
-            <a href="#contact" class="btn btn-primary" data-i18n="hero.bookButton">Book Your Dive</a>
-            <a href="#services" class="btn btn-secondary" data-i18n="hero.coursesButton">View Courses</a>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="section" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2 data-i18n="services.title">Our Services</h2>
-                <p data-i18n="services.subtitle">From beginner courses to advanced diving adventures, we offer a complete range of underwater experiences</p>
-            </div>
-            
-            <div class="services-grid">
-                <!-- Service 1 -->
-                <div class="service-card">
-                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h3 data-i18n="services.courses.title">PADI Courses</h3>
-                        <p data-i18n="services.courses.description">Beginner to advanced PADI certification courses including Discover Scuba, Open Water, Advanced Open Water, and Rescue Diver.</p>
-                        <a href="#contact" class="btn btn-primary" data-i18n="services.learnMore">Learn More</a>
-                    </div>
-                </div>
+                        </li>
+                        <li><a href="#booking" class="btn-book">Book Now</a></li>
+                    </ul>
+                </nav>
                 
-                <!-- Service 2 -->
-                <div class="service-card">
-                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w-1350&q=80');"></div>
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <i class="fas fa-ship"></i>
-                        </div>
-                        <h3 data-i18n="services.guided.title">Guided Dives</h3>
-                        <p data-i18n="services.guided.description">Explore Dar es Salaam's best dive sites with our experienced guides. Wall dives, coral reefs, and marine life encounters.</p>
-                        <a href="#contact" class="btn btn-primary" data-i18n="services.explore">Explore Dives</a>
-                    </div>
-                </div>
-                
-                <!-- Service 3 -->
-                <div class="service-card">
-                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1536922246289-88c42f957773?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <i class="fas fa-swimmer"></i>
-                        </div>
-                        <h3 data-i18n="services.snorkeling.title">Snorkeling Tours</h3>
-                        <p data-i18n="services.snorkeling.description">Experience the beauty of Tanzania's marine life from the surface. Perfect for non-divers and families.</p>
-                        <a href="#contact" class="btn btn-primary" data-i18n="services.viewTours">View Tours</a>
-                    </div>
-                </div>
-                
-                <!-- Service 4 -->
-                <div class="service-card">
-                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1544468266-6a8948003d5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <i class="fas fa-tools"></i>
-                        </div>
-                        <h3 data-i18n="services.equipment.title">Equipment Rental</h3>
-                        <p data-i18n="services.equipment.description">High-quality diving and snorkeling gear rental. Professional equipment maintenance and air fills available.</p>
-                        <a href="#contact" class="btn btn-primary" data-i18n="services.rentGear">Rent Gear</a>
-                    </div>
+                <div class="mobile-menu" id="mobileMenu">
+                    <i class="fas fa-bars"></i>
                 </div>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <!-- About Section -->
-    <section class="section about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h3 data-i18n="about.title">Your Gateway to Underwater Adventure</h3>
-                    <p data-i18n="about.description1">Thalassa Dive Center is a PADI-registered dive operator located on the Msasani/Slipway Peninsula of Dar es Salaam. We offer diving and water sport experiences for both beginners and advanced divers.</p>
-                    <p data-i18n="about.description2">Our certified instructors provide personalized training in a safe, fun environment. Whether you're taking your first breath underwater or exploring advanced dive sites, we ensure an unforgettable experience.</p>
-                    
-                    <div class="about-features">
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4 data-i18n="about.feature1.title">PADI Certified</h4>
-                                <p data-i18n="about.feature1.description">Internationally recognized certifications</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4 data-i18n="about.feature2.title">Experienced Guides</h4>
-                                <p data-i18n="about.feature2.description">Local knowledge of best dive sites</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4 data-i18n="about.feature3.title">Premium Equipment</h4>
-                                <p data-i18n="about.feature3.description">Well-maintained, modern dive gear</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Dive Center Location">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="section" id="gallery">
-        <div class="container">
-            <div class="section-title">
-                <h2 data-i18n="gallery.title">Gallery</h2>
-                <p data-i18n="gallery.subtitle">Explore the underwater wonders of Tanzania through our lens</p>
-            </div>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Coral Reef">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1576675466969-38eeae4b41f6?ixlib=rb-4.0.3&auto=format&fit=crop&w-1350&q=80" alt="Dive Boat">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3&auto=format&fit=crop&w-1351&q=80" alt="Marine Life">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w-1350&q=80" alt="Diver with Turtle">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?ixlib=rb-4.0.3&auto=format&fit=crop&w-1350&q=80" alt="Underwater Cave">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w-1350&q=80" alt="Dive Center">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & Booking Section -->
-    <section class="section contact" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2 data-i18n="contact.title">Book Your Adventure</h2>
-                <p data-i18n="contact.subtitle">Contact us to schedule your dive experience or ask any questions</p>
-            </div>
-            
-            <div class="booking-container">
-                <div class="contact-info">
-                    <h3 data-i18n="contact.infoTitle">Contact Information</h3>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4 data-i18n="contact.location">Location</h4>
-                                <p>Shop 17C, Maga beach / Slipway area,<br>Masaki, Dar es Salaam, Tanzania</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <i class="fas fa-phone-alt"></i>
-                            <div>
-                                <h4 data-i18n="contact.phone">Phone / WhatsApp</h4>
-                                <p>+255 769 474 643</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4 data-i18n="contact.email">Email</h4>
-                                <p>info@thalassatz.com</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <h3 data-i18n="contact.follow">Follow Us</h3>
-                    <div class="social-links">
-                        <a href="https://instagram.com/thalassatz" class="social-link" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-tripadvisor"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="booking-form">
-                    <h3 data-i18n="contact.formTitle">Send a Message</h3>
-                    <form id="bookingForm">
-                        <div class="form-group">
-                            <label for="name" data-i18n="contact.formName">Full Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="Your Name" required data-i18n-placeholder="contact.namePlaceholder">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email" data-i18n="contact.formEmail">Email Address</label>
-                            <input type="email" id="email" class="form-control" placeholder="Your Email" required data-i18n-placeholder="contact.emailPlaceholder">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone" data-i18n="contact.formPhone">Phone Number</label>
-                            <input type="tel" id="phone" class="form-control" placeholder="Your Phone" required data-i18n-placeholder="contact.phonePlaceholder">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="service" data-i18n="contact.formService">Service Interested In</label>
-                            <select id="service" class="form-control" required>
-                                <option value="" data-i18n="contact.selectService">Select a Service</option>
-                                <option value="padi-course" data-i18n="services.courses.title">PADI Courses</option>
-                                <option value="guided-dive" data-i18n="services.guided.title">Guided Dives</option>
-                                <option value="snorkeling" data-i18n="services.snorkeling.title">Snorkeling Tours</option>
-                                <option value="equipment" data-i18n="services.equipment.title">Equipment Rental</option>
-                                <option value="other" data-i18n="contact.other">Other Inquiry</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message" data-i18n="contact.formMessage">Message</label>
-                            <textarea id="message" class="form-control" rows="4" placeholder="Tell us about your diving experience and what you're looking for..." data-i18n-placeholder="contact.messagePlaceholder"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary" data-i18n="contact.submitButton">Submit Inquiry</button>
-                        
-                        <a href="https://wa.me/255769474643" class="btn whatsapp-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> <span data-i18n="contact.whatsappButton">Book via WhatsApp</span>
-                        </a>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <div class="footer-logo">THALASSA<span>DIVE</span></div>
-                    <p data-i18n="footer.description">PADI-certified dive center offering exceptional underwater experiences in Dar es Salaam, Tanzania. Explore coral reefs, learn to dive, or snorkel in crystal clear waters.</p>
-                    <div class="padi-badge" style="background-color: rgba(255,255,255,0.1);">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="padi-badge">
                         <i class="fas fa-award"></i>
-                        <span>PADI Dive Center #S-36457</span>
+                        <span>PADI Certified Dive Center</span>
                     </div>
-                </div>
-                
-                <div class="footer-links">
-                    <h4 class="footer-heading" data-i18n="footer.quickLinks">Quick Links</h4>
-                    <ul>
-                        <li><a href="#home" data-i18n="nav.home">Home</a></li>
-                        <li><a href="#services" data-i18n="nav.services">Courses</a></li>
-                        <li><a href="#about" data-i18n="nav.about">About Us</a></li>
-                        <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
-                        <li><a href="#contact" data-i18n="nav.contact">Book Now</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h4 class="footer-heading" data-i18n="footer.ourServices">Our Services</h4>
-                    <ul>
-                        <li><a href="#services" data-i18n="services.courses.title">PADI Certification</a></li>
-                        <li><a href="#services" data-i18n="services.guided.title">Guided Reef Dives</a></li>
-                        <li><a href="#services" data-i18n="services.snorkeling.title">Snorkeling Tours</a></li>
-                        <li><a href="#services" data-i18n="services.equipment.title">Equipment Rental</a></li>
-                        <li><a href="#services" data-i18n="footer.groupBookings">Group Bookings</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-contact">
-                    <h4 class="footer-heading" data-i18n="contact.infoTitle">Contact Us</h4>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <p>Shop 17C, Maga beach / Slipway area<br>Masaki, Dar es Salaam</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <div>
-                            <p>+255 769 474 643</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <p>info@thalassatz.com</p>
-                        </div>
+                    
+                    <h1 id="heroTitle">Explore Underwater Tanzania</h1>
+                    <p id="heroSubtitle">Thalassa Dive Center offers premium PADI-certified diving courses, guided reef explorations, and snorkeling adventures in the crystal-clear waters of Dar es Salaam.</p>
+                    
+                    <div class="hero-buttons">
+                        <a href="#courses" class="btn btn-primary" id="btnCourses">View Courses</a>
+                        <a href="#contact" class="btn btn-secondary" id="btnBook">Book Your Dive</a>
                     </div>
                 </div>
             </div>
-            
-            <div class="copyright">
-                <p>&copy; 2023 Thalassa Dive Center. <span data-i18n="footer.rights">All rights reserved.</span> | <span data-i18n="footer.padi">PADI is a registered trademark of PADI Worldwide.</span></p>
-            </div>
-        </div>
-    </footer>
+        </section>
 
-    <!-- Language Translation Data -->
-    <script type="application/json" id="translations">
-    {
-        "en": {
-            "nav": {
-                "home": "Home",
-                "services": "Services",
-                "about": "About",
-                "gallery": "Gallery",
-                "contact": "Book Now"
-            },
-            "hero": {
-                "padi": "PADI Certified Dive Center",
-                "title": "Explore Underwater Tanzania",
-                "subtitle": "Thalassa Dive Center offers premium PADI-certified diving courses, guided reef explorations, and snorkeling adventures in the crystal-clear waters of Dar es Salaam.",
-                "bookButton": "Book Your Dive",
-                "coursesButton": "View Courses"
-            },
-            "services": {
-                "title": "Our Services",
-                "subtitle": "From beginner courses to advanced diving adventures, we offer a complete range of underwater experiences",
-                "courses": {
-                    "title": "PADI Courses",
-                    "description": "Beginner to advanced PADI certification courses including Discover Scuba, Open Water, Advanced Open Water, and Rescue Diver."
-                },
-                "guided": {
-                    "title": "Guided Dives",
-                    "description": "Explore Dar es Salaam's best dive sites with our experienced guides. Wall dives, coral reefs, and marine life encounters."
-                },
-                "snorkeling": {
-                    "title": "Snorkeling Tours",
-                    "description": "Experience the beauty of Tanzania's marine life from the surface. Perfect for non-divers and families."
-                },
-                "equipment": {
-                    "title": "Equipment Rental",
-                    "description": "High-quality diving and snorkeling gear rental. Professional equipment maintenance and air fills available."
-                },
-                "learnMore": "Learn More",
-                "explore": "Explore Dives",
-                "viewTours": "View Tours",
-                "rentGear": "Rent Gear"
-            },
-            "about": {
-                "title": "Your Gateway to Underwater Adventure",
-                "description1": "Thalassa Dive Center is a PADI-registered dive operator located on the Msasani/Slipway Peninsula of Dar es Salaam. We offer diving and water sport experiences for both beginners and advanced divers.",
-                "description2": "Our certified instructors provide personalized training in a safe, fun environment. Whether you're taking your first breath underwater or exploring advanced dive sites, we ensure an unforgettable experience.",
-                "feature1": {
-                    "title": "PADI Certified",
-                    "description": "Internationally recognized certifications"
-                },
-                "feature2": {
-                    "title": "Experienced Guides",
-                    "description": "Local knowledge of best dive sites"
-                },
-                "feature3": {
-                    "title": "Premium Equipment",
-                    "description": "Well-maintained, modern dive gear"
-                }
-            },
-            "gallery": {
-                "title": "Gallery",
-                "subtitle": "Explore the underwater wonders of Tanzania through our lens"
-            },
-            "contact": {
-                "title": "Book Your Adventure",
-                "subtitle": "Contact us to schedule your dive experience or ask any questions",
-                "infoTitle": "Contact Information",
-                "location": "Location",
-                "phone": "Phone / WhatsApp",
-                "email": "Email",
-                "follow": "Follow Us",
-                "formTitle": "Send a Message",
-                "formName": "Full Name",
-                "namePlaceholder": "Your Name",
-                "formEmail": "Email Address",
-                "emailPlaceholder": "Your Email",
-                "formPhone": "Phone Number",
-                "phonePlaceholder": "Your Phone",
-                "formService": "Service Interested In",
-                "selectService": "Select a Service",
-                "other": "Other Inquiry",
-                "formMessage": "Message",
-                "messagePlaceholder": "Tell us about your diving experience and what you're looking for...",
-                "submitButton": "Submit Inquiry",
-                "whatsappButton": "Book via WhatsApp"
-            },
-            "footer": {
-                "description": "PADI-certified dive center offering exceptional underwater experiences in Dar es Salaam, Tanzania. Explore coral reefs, learn to dive, or snorkel in crystal clear waters.",
-                "quickLinks": "Quick Links",
-                "ourServices": "Our Services",
-                "groupBookings": "Group Bookings",
-                "rights": "All rights reserved.",
-                "padi": "PADI is a registered trademark of PADI Worldwide."
-            }
-        },
-        "sw": {
-            "nav": {
-                "home": "Nyumbani",
-                "services": "Huduma",
-                "about": "Kuhusu",
-                "gallery": "Picha",
-                "contact": "Hudhuria Sasa"
-            },
-            "hero": {
-                "padi": "Kituo cha Kupiga mbizi kilichosajiliwa na PADI",
-                "title": "Gundua Tanzania ya Chini ya Maji",
-                "subtitle": "Thalassa Dive Center inatoa kozi za juu za kupiga mbizi zilizosajiliwa na PADI, utaftaji wa miamba ya matumbawe, na misafiri ya kuzama kwenye maji machafu ya Dar es Salaam.",
-                "bookButton": "Hudhuria Kupiga Mbizi Yako",
-                "coursesButton": "Angalia Kozi"
-            },
-            "services": {
-                "title": "Huduma Zetu",
-                "subtitle": "Kutoka kozi za mwanzo hadi misafiri ya hali ya juu ya kupiga mbizi, tunatoa anuwai kamili ya uzoefu wa chini ya maji",
-                "courses": {
-                    "title": "Kozi za PADI",
-                    "description": "Kozi za kuanzia mwanzo hadi hali ya juu za usajili wa PADI zikiwemo Discover Scuba, Open Water, Advanced Open Water, na Rescue Diver."
-                },
-                "guided": {
-                    "title": "Kupiga Mbizi kwa Uongozi",
-                    "description": "Gundua maeneo bora ya kupiga mbizi ya Dar es Salaam na waongozo wetu wenye uzoefu. Kupiga mbizi kwenye ukuta, miamba ya matumbawe, na kukutana na viumbe wa baharini."
-                },
-                "snorkeling": {
-                    "title": "Ziara za Snorkeling",
-                    "description": "Pata uzoefu wa uzuri wa viumbe wa baharini wa Tanzania kutoka juu ya uso. Inafaa kwa wasio wa kupiga mbizi na familia."
-                },
-                "equipment": {
-                    "title": "Kukodisha Vifaa",
-                    "description": "Kukodisha vifaa vya hali ya juu vya kupiga mbizi na snorkeling. Matengenezo ya kitaalamu ya vifaa na kujaza hewa vinapatikana."
-                },
-                "learnMore": "Jifunze Zaidi",
-                "explore": "Gundua Kupiga Mbizi",
-                "viewTours": "Angalia Ziara",
-                "rentGear": "Kodisha Vifaa"
-            },
-            "about": {
-                "title": "Lango Lako kwa Ajili ya Misafiri ya Chini ya Maji",
-                "description1": "Thalassa Dive Center ni mwendeshaji wa kupiga mbizi uliosajiliwa na PADI uliopo kwenye Rasi ya Msasani/Slipway ya Dar es Salaam. Tunatoa uzoefu wa kupiga mbizi na michezo ya maji kwa wanaoanza na wapiga mbizi wa hali ya juu.",
-                "description2": "Waafunzi wetu waliosajiliwa hutoa mafunzo ya kibinafsi katika mazingira salama na ya kufurahisha. Iwe unachukua pumzi yako ya kwanza chini ya maji au unagundua maeneo ya hali ya juu ya kupiga mbizi, tunahakikisha uzoefu usiosahaulika.",
-                "feature1": {
-                    "title": "Imesajiliwa na PADI",
-                    "description": "Vyeti vinavyotambulika kimataifa"
-                },
-                "feature2": {
-                    "title": "Waongozo Wenye Uzoefu",
-                    "description": "Ujuzi wa ndani wa maeneo bora ya kupiga mbizi"
-                },
-                "feature3": {
-                    "title": "Vifaa vya Hali ya Juu",
-                    "description": "Vifaa vya kisasa vya kupiga mbizi vilivyotengenezwa vyema"
-                }
-            },
-            "gallery": {
-                "title": "Picha",
-                "subtitle": "Gundua maajabu ya chini ya maji ya Tanzania kupitia lenzi yetu"
-            },
-            "contact": {
-                "title": "Hudhuria Misafiri Yako",
-                "subtitle": "Wasiliana nasi kupanga uzoefu wako wa kupiga mbizi au uliza maswali yoyote",
-                "infoTitle": "Taarifa za Mawasiliano",
-                "location": "Mahali",
-                "phone": "Simu / WhatsApp",
-                "email": "Barua Pepe",
-                "follow": "Tufuate",
-                "formTitle": "Tuma Ujumbe",
-                "formName": "Jina Kamili",
-                "namePlaceholder": "Jina Lako",
-                "formEmail": "Anwani ya Barua Pepe",
-                "emailPlaceholder": "Barua Pepe Yako",
-                "formPhone": "Nambari ya Simu",
-                "phonePlaceholder": "Simu Yako",
-                "formService": "Huduma Unayopendezwa Nayo",
-                "selectService": "Chagua Huduma",
-                "other": "Uchunguzi Mwingine",
-                "formMessage": "Ujumbe",
-                "messagePlaceholder": "Tuambie kuhusu uzoefu wako wa kupiga mbizi na unachotafuta...",
-                "submitButton": "Wasilisha Uchunguzi",
-                "whatsappButton": "Hudhuria kupitia WhatsApp"
-            },
-            "footer": {
-                "description": "Kituo cha kupiga mbizi kilichosajiliwa na PADI kinachotoa uzoefu wa kipekee wa chini ya maji huko Dar es Salaam, Tanzania. Gundua miamba ya matumbawe, jifunze kupiga mbizi, au snorkeling kwenye maji machafu.",
-                "quickLinks": "Viungo vya Haraka",
-                "ourServices": "Huduma Zetu",
-                "groupBookings": "Hudhuria Kwa Vikundi",
-                "rights": "Haki zote zimehifadhiwa.",
-                "padi": "PADI ni chapa ya biashara iliyosajiliwa ya PADI Duniani."
-            }
-        }
-    }
-    </script>
+        <!-- Quick Info Section -->
+        <section class="section">
+            <div class="container">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Location</h3>
+                        <p id="locationText">Shop 17C, Maga beach / Slipway area, Masaki, Dar es Salaam</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <i class="fas fa-phone-alt"></i>
+                        <h3 id="contactTitle">Contact</h3>
+                        <p>+255 769 474 643<br>info@thalassatz.com</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <i class="fas fa-clock"></i>
+                        <h3 id="hoursTitle">Hours</h3>
+                        <p id="hoursText">Daily: 8:00 AM - 6:00 PM<br>Weekends: 7:00 AM - 7:00 PM</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3 id="safetyTitle">Safety First</h3>
+                        <p id="safetyText">PADI certified instructors<br>Premium safety equipment</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="section" id="services">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="servicesTitle">Our Services</h2>
+                    <p id="servicesSubtitle">From beginner courses to advanced diving adventures</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3 id="service1Title">PADI Courses</h3>
+                            <p id="service1Desc">Beginner to advanced PADI certification courses including Discover Scuba, Open Water, Advanced Open Water, and Rescue Diver.</p>
+                            <a href="#courses" class="service-link" id="service1Link">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <i class="fas fa-ship"></i>
+                            </div>
+                            <h3 id="service2Title">Guided Dives</h3>
+                            <p id="service2Desc">Explore Dar es Salaam's best dive sites with our experienced guides. Wall dives, coral reefs, and marine life encounters.</p>
+                            <a href="#dives" class="service-link" id="service2Link">Explore Dives <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1536922246289-88c42f957773?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <i class="fas fa-swimmer"></i>
+                            </div>
+                            <h3 id="service3Title">Snorkeling Tours</h3>
+                            <p id="service3Desc">Experience the beauty of Tanzania's marine life from the surface. Perfect for non-divers and families.</p>
+                            <a href="#snorkeling" class="service-link" id="service3Link">View Tours <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="section testimonials">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="testimonialsTitle">What Our Divers Say</h2>
+                    <p id="testimonialsSubtitle">Real experiences from our happy customers</p>
+                </div>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text" id="testimonial1">"Absolutely amazing experience! The instructors were professional and patient. Saw incredible marine life on the reef dives."</p>
+                        <div class="testimonial-author">
+                            <strong>Sarah K.</strong>
+                            <span>Open Water Certified</span>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text" id="testimonial2">"As a beginner, I was nervous about diving. The team at Thalassa made me feel safe and confident throughout the course."</p>
+                        <div class="testimonial-author">
+                            <strong>Michael T.</strong>
+                            <span>Discover Scuba</span>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text" id="testimonial3">"The snorkeling tour was perfect for our family. The guides were knowledgeable and showed us beautiful coral reefs."</p>
+                        <div class="testimonial-author">
+                            <strong>The Johnson Family</strong>
+                            <span>Snorkeling Tour</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta" id="contact">
+            <div class="container">
+                <h2 id="ctaTitle">Ready to Dive In?</h2>
+                <p id="ctaSubtitle">Book your diving adventure today and explore the underwater wonders of Tanzania</p>
+                
+                <div class="cta-buttons">
+                    <a href="#booking" class="btn btn-primary" id="ctaBtn">Book Now</a>
+                    <a href="tel:+255769474643" class="btn btn-secondary">
+                        <i class="fas fa-phone-alt"></i> <span id="callBtn">Call Us</span>
+                    </a>
+                    <a href="https://wa.me/255769474643" class="btn btn-secondary" target="_blank">
+                        <i class="fab fa-whatsapp"></i> <span id="whatsappBtn">WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">
+                            <i class="fas fa-water"></i>
+                            <div class="footer-logo-text">
+                                <div class="footer-logo-main">THALASSA</div>
+                                <div class="footer-logo-sub">DIVE CENTER</div>
+                            </div>
+                        </div>
+                        <p class="footer-description" id="footerDesc">PADI-certified dive center offering exceptional underwater experiences in Dar es Salaam, Tanzania.</p>
+                        
+                        <div class="social-links">
+                            <a href="https://instagram.com/thalassatz" class="social-link" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-tripadvisor"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h3 id="footerLinksTitle">Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="#home" id="footerHome">Home</a></li>
+                            <li><a href="#services" id="footerServices">Services</a></li>
+                            <li><a href="#courses" id="footerCourses">Courses</a></li>
+                            <li><a href="#about" id="footerAbout">About</a></li>
+                            <li><a href="#contact" id="footerContact">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h3 id="footerContactTitle">Contact Info</h3>
+                        <div class="contact-info">
+                            <p><i class="fas fa-map-marker-alt"></i> <span id="footerLocation">Shop 17C, Maga beach / Slipway area, Masaki, Dar es Salaam</span></p>
+                            <p><i class="fas fa-phone-alt"></i> +255 769 474 643</p>
+                            <p><i class="fas fa-envelope"></i> info@thalassatz.com</p>
+                            <p><i class="fas fa-clock"></i> <span id="footerHours">Daily: 8:00 AM - 6:00 PM</span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h3>PADI Certified</h3>
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                            <i class="fas fa-award" style="font-size: 32px; color: #ff6b35;"></i>
+                            <div>
+                                <p style="opacity: 0.8; font-size: 14px;">PADI Dive Center #S-36457<br>Internationally recognized</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p id="copyright">&copy; 2024 Thalassa Dive Center. All rights reserved. | PADI is a registered trademark of PADI Worldwide.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
 
     <script>
-        // Language Management
-        let currentLang = 'en';
-        const translations = JSON.parse(document.getElementById('translations').textContent);
-
-        // Initialize language
-        function initLanguage() {
-            // Check for saved language preference
-            const savedLang = localStorage.getItem('thalassa-lang');
-            if (savedLang && translations[savedLang]) {
-                currentLang = savedLang;
+        // Translations
+        const translations = {
+            en: {
+                nav: {
+                    home: "Home",
+                    services: "Services",
+                    courses: "Courses",
+                    about: "About",
+                    contact: "Contact",
+                    book: "Book Now"
+                },
+                hero: {
+                    title: "Explore Underwater Tanzania",
+                    subtitle: "Thalassa Dive Center offers premium PADI-certified diving courses, guided reef explorations, and snorkeling adventures in the crystal-clear waters of Dar es Salaam.",
+                    btnCourses: "View Courses",
+                    btnBook: "Book Your Dive"
+                },
+                info: {
+                    location: "Shop 17C, Maga beach / Slipway area, Masaki, Dar es Salaam",
+                    contact: "Contact",
+                    hours: "Hours",
+                    hoursText: "Daily: 8:00 AM - 6:00 PM<br>Weekends: 7:00 AM - 7:00 PM",
+                    safety: "Safety First",
+                    safetyText: "PADI certified instructors<br>Premium safety equipment"
+                },
+                services: {
+                    title: "Our Services",
+                    subtitle: "From beginner courses to advanced diving adventures",
+                    service1: {
+                        title: "PADI Courses",
+                        desc: "Beginner to advanced PADI certification courses including Discover Scuba, Open Water, Advanced Open Water, and Rescue Diver.",
+                        link: "Learn More"
+                    },
+                    service2: {
+                        title: "Guided Dives",
+                        desc: "Explore Dar es Salaam's best dive sites with our experienced guides. Wall dives, coral reefs, and marine life encounters.",
+                        link: "Explore Dives"
+                    },
+                    service3: {
+                        title: "Snorkeling Tours",
+                        desc: "Experience the beauty of Tanzania's marine life from the surface. Perfect for non-divers and families.",
+                        link: "View Tours"
+                    }
+                },
+                testimonials: {
+                    title: "What Our Divers Say",
+                    subtitle: "Real experiences from our happy customers",
+                    testimonial1: "Absolutely amazing experience! The instructors were professional and patient. Saw incredible marine life on the reef dives.",
+                    testimonial2: "As a beginner, I was nervous about diving. The team at Thalassa made me feel safe and confident throughout the course.",
+                    testimonial3: "The snorkeling tour was perfect for our family. The guides were knowledgeable and showed us beautiful coral reefs."
+                },
+                cta: {
+                    title: "Ready to Dive In?",
+                    subtitle: "Book your diving adventure today and explore the underwater wonders of Tanzania",
+                    btn: "Book Now",
+                    call: "Call Us",
+                    whatsapp: "WhatsApp"
+                },
+                footer: {
+                    description: "PADI-certified dive center offering exceptional underwater experiences in Dar es Salaam, Tanzania.",
+                    linksTitle: "Quick Links",
+                    home: "Home",
+                    services: "Services",
+                    courses: "Courses",
+                    about: "About",
+                    contact: "Contact",
+                    contactTitle: "Contact Info",
+                    location: "Shop 17C, Maga beach / Slipway area, Masaki, Dar es Salaam",
+                    hours: "Daily: 8:00 AM - 6:00 PM",
+                    copyright: "© 2024 Thalassa Dive Center. All rights reserved. | PADI is a registered trademark of PADI Worldwide."
+                }
+            },
+            sw: {
+                nav: {
+                    home: "Nyumbani",
+                    services: "Huduma",
+                    courses: "Kozi",
+                    about: "Kuhusu",
+                    contact: "Mawasiliano",
+                    book: "Hudhuria Sasa"
+                },
+                hero: {
+                    title: "Gundua Tanzania ya Chini ya Maji",
+                    subtitle: "Thalassa Dive Center inatoa kozi za hali ya juu za kupiga mbizi zilizosajiliwa na PADI, utaftaji wa miamba ya matumbawe, na misafiri ya snorkeling katika maji machafu ya Dar es Salaam.",
+                    btnCourses: "Angalia Kozi",
+                    btnBook: "Hudhuria Kupiga Mbizi"
+                },
+                info: {
+                    location: "Duka 17C, Maeneo ya Mfereji wa Maga / Slipway, Masaki, Dar es Salaam",
+                    contact: "Mawasiliano",
+                    hours: "Saa za Kufungulia",
+                    hoursText: "Kila Siku: 8:00 asubuhi - 6:00 usiku<br>Wikendi: 7:00 asubuhi - 7:00 usiku",
+                    safety: "Usalama Kwanza",
+                    safetyText: "Waafunzi waliosajiliwa na PADI<br>Vifaa vya hali ya juu vya usalama"
+                },
+                services: {
+                    title: "Huduma Zetu",
+                    subtitle: "Kutoka kozi za mwanzo hadi misafiri ya hali ya juu ya kupiga mbizi",
+                    service1: {
+                        title: "Kozi za PADI",
+                        desc: "Kozi za kuanzia mwanzo hadi hali ya juu za usajili wa PADI zikiwemo Discover Scuba, Open Water, Advanced Open Water, na Rescue Diver.",
+                        link: "Jifunze Zaidi"
+                    },
+                    service2: {
+                        title: "Kupiga Mbizi kwa Uongozi",
+                        desc: "Gundua maeneo bora ya kupiga mbizi ya Dar es Salaam na waongozo wetu wenye uzoefu. Kupiga mbizi kwenye ukuta, miamba ya matumbawe, na kukutana na viumbe wa baharini.",
+                        link: "Gundua Kupiga Mbizi"
+                    },
+                    service3: {
+                        title: "Ziara za Snorkeling",
+                        desc: "Pata uzoefu wa uzuri wa viumbe wa baharini wa Tanzania kutoka juu ya uso. Inafaa kwa wasio wa kupiga mbizi na familia.",
+                        link: "Angalia Ziara"
+                    }
+                },
+                testimonials: {
+                    title: "Watu Wetu Wanasema Nini",
+                    subtitle: "Uzoefu halisi kutoka kwa wateja wetu wafuraha",
+                    testimonial1: "Uzoefu wa ajabu kabisa! Waafunzi walikuwa wa kitaalamu na wenye subira. Niliona viumbe wa kustaajabisha wa baharini kwenye kupiga mbizi kwenye matumbawe.",
+                    testimonial2: "Kama mwanzo, nilikuwa na wasiwasi juu ya kupiga mbizi. Timu ya Thalassa ilinifanya nijisikie salama na na ujasiri wakati wote wa kozi.",
+                    testimonial3: "Ziara ya snorkeling ilikuwa kamili kwa familia yetu. Waongozo walikuwa na maarifa na walionyesha matumbawe mazuri."
+                },
+                cta: {
+                    title: "Tayari Kuingia Ndani ya Maji?",
+                    subtitle: "Hudhuria safari yako ya kupiga mbizi leo na gundua maajabu ya chini ya maji ya Tanzania",
+                    btn: "Hudhuria Sasa",
+                    call: "Tupigie Simu",
+                    whatsapp: "WhatsApp"
+                },
+                footer: {
+                    description: "Kituo cha kupiga mbizi kilichosajiliwa na PADI kinachotoa uzoefu wa kipekee wa chini ya maji huko Dar es Salaam, Tanzania.",
+                    linksTitle: "Viungo vya Haraka",
+                    home: "Nyumbani",
+                    services: "Huduma",
+                    courses: "Kozi",
+                    about: "Kuhusu",
+                    contact: "Mawasiliano",
+                    contactTitle: "Taarifa za Mawasiliano",
+                    location: "Duka 17C, Maeneo ya Mfereji wa Maga / Slipway, Masaki, Dar es Salaam",
+                    hours: "Kila Siku: 8:00 asubuhi - 6:00 usiku",
+                    copyright: "© 2024 Thalassa Dive Center. Haki zote zimehifadhiwa. | PADI ni chapa ya biashara iliyosajiliwa ya PADI Duniani."
+                }
             }
-            
-            // Set initial language
-            setLanguage(currentLang);
-            
-            // Set up language switcher event listeners
-            setupLanguageSwitcher();
+        };
+
+        let currentLang = 'en';
+
+        // Language selection
+        function selectLanguage(lang) {
+            currentLang = lang;
+            document.getElementById('languageSelection').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'block';
+            updateLanguage();
+            localStorage.setItem('thalassa-lang', lang);
         }
 
-        // Set language function
-        function setLanguage(lang) {
-            if (!translations[lang]) return;
+        // Change language
+        function changeLanguage() {
+            currentLang = currentLang === 'en' ? 'sw' : 'en';
+            updateLanguage();
+            localStorage.setItem('thalassa-lang', currentLang);
+        }
+
+        // Update all text
+        function updateLanguage() {
+            const t = translations[currentLang];
             
-            currentLang = lang;
-            localStorage.setItem('thalassa-lang', lang);
+            // Update navigation
+            document.getElementById('currentLang').textContent = currentLang === 'en' ? 'English' : 'Kiswahili';
             
-            // Update all elements with data-i18n attribute
-            document.querySelectorAll('[data-i18n]').forEach(element => {
-                const keys = element.getAttribute('data-i18n').split('.');
-                let translation = translations[lang];
-                
-                // Navigate through nested translation object
-                for (const key of keys) {
-                    if (translation && translation[key]) {
-                        translation = translation[key];
-                    } else {
-                        translation = '';
-                        break;
-                    }
-                }
-                
-                if (translation) {
-                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                        element.setAttribute('placeholder', translation);
-                    } else if (element.tagName === 'OPTION') {
-                        element.textContent = translation;
-                    } else {
-                        element.textContent = translation;
-                    }
-                }
-            });
+            // Update hero section
+            document.getElementById('heroTitle').textContent = t.hero.title;
+            document.getElementById('heroSubtitle').textContent = t.hero.subtitle;
+            document.getElementById('btnCourses').textContent = t.hero.btnCourses;
+            document.getElementById('btnBook').textContent = t.hero.btnBook;
             
-            // Update all elements with data-i18n-placeholder attribute
-            document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
-                const keys = element.getAttribute('data-i18n-placeholder').split('.');
-                let translation = translations[lang];
-                
-                for (const key of keys) {
-                    if (translation && translation[key]) {
-                        translation = translation[key];
-                    } else {
-                        translation = '';
-                        break;
-                    }
-                }
-                
-                if (translation) {
-                    element.setAttribute('placeholder', translation);
-                }
-            });
+            // Update info cards
+            document.getElementById('locationText').innerHTML = t.info.location;
+            document.getElementById('contactTitle').textContent = t.info.contact;
+            document.getElementById('hoursTitle').textContent = t.info.hours;
+            document.getElementById('hoursText').innerHTML = t.info.hoursText;
+            document.getElementById('safetyTitle').textContent = t.info.safety;
+            document.getElementById('safetyText').innerHTML = t.info.safetyText;
             
-            // Update language button text
-            const currentLangElement = document.getElementById('currentLang');
-            if (currentLangElement) {
-                currentLangElement.textContent = lang === 'en' ? 'English' : 'Kiswahili';
-            }
+            // Update services
+            document.getElementById('servicesTitle').textContent = t.services.title;
+            document.getElementById('servicesSubtitle').textContent = t.services.subtitle;
+            document.getElementById('service1Title').textContent = t.services.service1.title;
+            document.getElementById('service1Desc').textContent = t.services.service1.desc;
+            document.getElementById('service1Link').innerHTML = t.services.service1.link + ' <i class="fas fa-arrow-right"></i>';
+            document.getElementById('service2Title').textContent = t.services.service2.title;
+            document.getElementById('service2Desc').textContent = t.services.service2.desc;
+            document.getElementById('service2Link').innerHTML = t.services.service2.link + ' <i class="fas fa-arrow-right"></i>';
+            document.getElementById('service3Title').textContent = t.services.service3.title;
+            document.getElementById('service3Desc').textContent = t.services.service3.desc;
+            document.getElementById('service3Link').innerHTML = t.services.service3.link + ' <i class="fas fa-arrow-right"></i>';
             
-            // Update language dropdown active state
-            document.querySelectorAll('.language-option').forEach(option => {
-                if (option.getAttribute('data-lang') === lang) {
-                    option.classList.add('active');
-                } else {
-                    option.classList.remove('active');
-                }
-            });
+            // Update testimonials
+            document.getElementById('testimonialsTitle').textContent = t.testimonials.title;
+            document.getElementById('testimonialsSubtitle').textContent = t.testimonials.subtitle;
+            document.getElementById('testimonial1').textContent = t.testimonials.testimonial1;
+            document.getElementById('testimonial2').textContent = t.testimonials.testimonial2;
+            document.getElementById('testimonial3').textContent = t.testimonials.testimonial3;
+            
+            // Update CTA
+            document.getElementById('ctaTitle').textContent = t.cta.title;
+            document.getElementById('ctaSubtitle').textContent = t.cta.subtitle;
+            document.getElementById('ctaBtn').textContent = t.cta.btn;
+            document.getElementById('callBtn').textContent = t.cta.call;
+            document.getElementById('whatsappBtn').textContent = t.cta.whatsapp;
+            
+            // Update footer
+            document.getElementById('footerDesc').textContent = t.footer.description;
+            document.getElementById('footerLinksTitle').textContent = t.footer.linksTitle;
+            document.getElementById('footerHome').textContent = t.footer.home;
+            document.getElementById('footerServices').textContent = t.footer.services;
+            document.getElementById('footerCourses').textContent = t.footer.courses;
+            document.getElementById('footerAbout').textContent = t.footer.about;
+            document.getElementById('footerContact').textContent = t.footer.contact;
+            document.getElementById('footerContactTitle').textContent = t.footer.contactTitle;
+            document.getElementById('footerLocation').textContent = t.footer.location;
+            document.getElementById('footerHours').textContent = t.footer.hours;
+            document.getElementById('copyright').textContent = t.footer.copyright;
             
             // Update HTML lang attribute
-            document.documentElement.lang = lang;
-            
-            // Update direction for RTL languages if needed
-            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.documentElement.lang = currentLang;
         }
 
-        // Setup language switcher
-        function setupLanguageSwitcher() {
-            const languageBtn = document.getElementById('languageBtn');
-            const languageDropdown = document.getElementById('languageDropdown');
-            
-            // Toggle dropdown
-            if (languageBtn) {
-                languageBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    languageDropdown.classList.toggle('active');
-                });
+        // Check for saved language
+        window.addEventListener('load', () => {
+            const savedLang = localStorage.getItem('thalassa-lang');
+            if (savedLang) {
+                selectLanguage(savedLang);
             }
-            
-            // Language option clicks
-            document.querySelectorAll('.language-option').forEach(option => {
-                option.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const lang = option.getAttribute('data-lang');
-                    setLanguage(lang);
-                    languageDropdown.classList.remove('active');
-                });
-            });
-            
-            // Close dropdown when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!languageBtn.contains(e.target) && !languageDropdown.contains(e.target)) {
-                    languageDropdown.classList.remove('active');
-                }
-            });
-        }
+            // Otherwise, language selection screen stays visible
+        });
 
         // Mobile menu toggle
-        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
-            document.getElementById('mainNav').classList.toggle('active');
-            this.innerHTML = document.getElementById('mainNav').classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        document.getElementById('mobileMenu').addEventListener('click', () => {
+            const nav = document.querySelector('nav ul');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
         });
-        
-        // Smooth scrolling for anchor links
+
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
+                if (targetId === '#') return;
                 
                 const targetElement = document.querySelector(targetId);
-                if(targetElement) {
+                if (targetElement) {
                     // Close mobile menu if open
-                    document.getElementById('mainNav').classList.remove('active');
-                    document.getElementById('mobileMenuBtn').innerHTML = '<i class="fas fa-bars"></i>';
-                    
-                    // Close language dropdown if open
-                    document.getElementById('languageDropdown').classList.remove('active');
+                    if (window.innerWidth <= 992) {
+                        document.querySelector('nav ul').style.display = 'none';
+                    }
                     
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: targetElement.offsetTop - 100,
                         behavior: 'smooth'
                     });
                 }
             });
-        });
-        
-        // Form submission
-        document.getElementById('bookingForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const service = document.getElementById('service').value;
-            const serviceText = document.getElementById('service').options[document.getElementById('service').selectedIndex].text;
-            
-            // Show success message in current language
-            const successMessages = {
-                'en': `Thank you ${name}! Your inquiry about ${serviceText} has been received. We will contact you shortly.`,
-                'sw': `Asante ${name}! Uchunguzi wako kuhusu ${serviceText} umepokelewa. Tutawasiliana nawe hivi karibuni.`
-            };
-            
-            alert(successMessages[currentLang]);
-            
-            // Reset form
-            this.reset();
-        });
-        
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if(window.scrollY > 100) {
-                header.style.backgroundColor = 'rgba(10, 36, 99, 0.98)';
-                header.style.padding = '10px 0';
-            } else {
-                header.style.backgroundColor = 'rgba(10, 36, 99, 0.95)';
-                header.style.padding = '15px 0';
-            }
-        });
-        
-        // Initialize everything when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            initLanguage();
         });
     </script>
 </body>
