@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PADI Diving Courses | Thalassa Dive Center - Certification Courses</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            font-size: 28px;
+            color: #00b4d8;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #023e8a;
+        }
+        
+        .logo-main {
+            font-size: 24px;
+            line-height: 1;
+        }
+        
+        .logo-sub {
+            font-size: 12px;
+            color: #0077b6;
+            letter-spacing: 1px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 5px 0;
+        }
+        
+        nav a:hover, nav a.active {
+            color: #00b4d8;
+            border-bottom: 2px solid #00b4d8;
+        }
+        
+        .btn-book {
+            background: #00b4d8;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .btn-book:hover {
+            background: #0077b6;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* ===== PAGE HEADER ===== */
+        .page-header {
+            background: linear-gradient(rgba(2, 62, 138, 0.8), rgba(0, 119, 182, 0.8)), 
+                        url('https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 100px;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .padi-badge-large {
+            background: rgba(255,255,255,0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            border-radius: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(5px);
+            font-size: 1.1rem;
+        }
+        
+        .padi-badge-large i {
+            color: #ff6b35;
+        }
+        
+        /* ===== COURSES SECTION ===== */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #023e8a;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* ===== COURSE LEVELS ===== */
+        .course-levels {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .level-btn {
+            padding: 12px 25px;
+            background: #e3f2fd;
+            color: #0077b6;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .level-btn:hover, .level-btn.active {
+            background: #00b4d8;
+            color: white;
+        }
+        
+        /* ===== COURSES GRID ===== */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .course-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .course-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .course-content {
+            padding: 30px;
+        }
+        
+        .course-level-tag {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #0077b6;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .course-content h3 {
+            color: #023e8a;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .course-content p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .course-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+            padding: 20px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .detail-item i {
+            color: #00b4d8;
+            font-size: 18px;
+        }
+        
+        .detail-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .detail-label {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .detail-value {
+            font-weight: 600;
+            color: #023e8a;
+        }
+        
+        .course-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #00b4d8;
+        }
+        
+        .btn-course {
+            padding: 12px 25px;
+            background: #00b4d8;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-course:hover {
+            background: #0077b6;
+        }
+        
+        /* ===== PADI PATH SECTION ===== */
+        .padi-path {
+            background: #f0f8ff;
+        }
+        
+        .path-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .path-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #00b4d8;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin-right: 30px;
+            flex-shrink: 0;
+        }
+        
+        .step-content h3 {
+            color: #023e8a;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .step-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* ===== SPECIALTY COURSES ===== */
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .specialty-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .specialty-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .specialty-icon {
+            font-size: 40px;
+            color: #00b4d8;
+            margin-bottom: 15px;
+        }
+        
+        .specialty-card h3 {
+            color: #023e8a;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .specialty-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        /* ===== FAQ SECTION ===== */
+        .faq-section {
+            background: #f0f8ff;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            padding: 20px;
+            font-weight: 600;
+            color: #023e8a;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        /* ===== CTA BANNER ===== */
+        .cta-banner {
+            background: linear-gradient(135deg, #023e8a, #0077b6);
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        
+        .cta-banner h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-banner p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .btn-cta {
+            display: inline-block;
+            padding: 15px 40px;
+            background: white;
+            color: #0077b6;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-cta:hover {
+            background: #00b4d8;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background: #023e8a;
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo i {
+            font-size: 32px;
+            color: #00b4d8;
+        }
+        
+        .footer-logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .footer-logo-main {
+            font-size: 22px;
+            font-weight: 700;
+        }
+        
+        .footer-logo-sub {
+            font-size: 12px;
+            color: #90e0ef;
+        }
+        
+        .footer-description {
+            opacity: 0.8;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background: #00b4d8;
+            transform: translateY(-3px);
+        }
+        
+        .footer-col h3 {
+            color: #00b4d8;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #00b4d8;
+            padding-left: 5px;
+        }
+        
+        .contact-info p {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .contact-info i {
+            color: #00b4d8;
+            margin-top: 3px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.6;
+            font-size: 14px;
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            nav ul {
+                display: none;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .path-step {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 120px 0 80px;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .course-details {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .course-levels {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .level-btn {
+                width: 200px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-water logo-icon"></i>
+                <div class="logo-text">
+                    <div class="logo-main">THALASSA</div>
+                    <div class="logo-sub">DIVE CENTER</div>
+                </div>
+            </a>
+            
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="courses.html" class="active">Courses</a></li>
+                    <li><a href="dives.html">Dive Trips</a></li>
+                    <li><a href="snorkeling.html">Snorkeling</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="btn-book">Book Now</a></li>
+                </ul>
+            </nav>
+            
+            <div class="mobile-menu" id="mobileMenu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="padi-badge-large">
+                <i class="fas fa-award"></i>
+                <span>PADI 5-Star Dive Center</span>
+            </div>
+            <h1>PADI Diving Courses</h1>
+            <p>Start your underwater journey with internationally recognized PADI certifications. From first-time divers to professional levels.</p>
+        </div>
+    </section>
+
+    <!-- Course Levels Filter -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Choose Your Course Level</h2>
+                <p>Filter courses by your experience level</p>
+            </div>
+            
+            <div class="course-levels">
+                <button class="level-btn active" data-level="all">All Courses</button>
+                <button class="level-btn" data-level="beginner">Beginner</button>
+                <button class="level-btn" data-level="advanced">Advanced</button>
+                <button class="level-btn" data-level="professional">Professional</button>
+                <button class="level-btn" data-level="specialty">Specialty</button>
+            </div>
+            
+            <!-- Courses Grid -->
+            <div class="courses-grid">
+                <!-- Discover Scuba Diving -->
+                <div class="course-card" data-level="beginner">
+                    <div class="course-img" style="background-image: url('https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="course-content">
+                        <span class="course-level-tag">Beginner</span>
+                        <h3>Discover Scuba Diving</h3>
+                        <p>Perfect introduction for first-timers. Experience scuba diving in a pool or calm sea with professional guidance.</p>
+                        
+                        <div class="course-details">
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <div class="detail-text">
+                                    <span class="detail-label">Duration</span>
+                                    <span class="detail-value">1 Day</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-water"></i>
+                                <div class="detail-text">
+                                    <span class="detail-label">Max Depth</span>
+                                    <span class="detail-value">6 meters</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-user-graduate"></i>
+                                <div class="detail-text">
+                                    <span class="detail-label">Prerequisites</span>
+                                    <span class="detail-value">None</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-swimmer"></i>
+                                <div class="detail-text">
+                                    <span class="detail-label">Minimum Age</span>
+                                    <span class="detail-value">10 years</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="course-price">
+                            <div class="price">$120</div>
+                            <a href="contact.html" class="btn-course">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Open Water Diver -->
+                <div class="course-card" data-level="beginner">
+                    <div class="course-img" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="course-content">
+                        <span class="course-level-tag">Beginner</span>
+                        <h3>Open Water Diver</h3>
+                        <p>The world's most popular scuba certification. Learn to dive safely and confidently to 18 meters.</p>
+                        
+                        <div class="course-details">
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <div class="detail-text">
+                                    <span class="detail-label">Duration</span>
+                                    <span class="detail-value">3-4 Days</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-water"></i>
+                                <div class="detail-text">
+                                    <span class="detail-label">Max Depth</span>
+                                    <span class="detail-value">18 meters</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-user-graduate"></i>
+                                <div class="detail-text">
+                                    <span class="detail-label">Prerequisites</span>
+                                    <span class="detail-value">Good health</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-swimmer"></i>
+                                <div class="detail-text">
+                                    <span class="detail-label">Minimum Age</span>
+                                    <span class="detail-value">10 years</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="course-price">
+                            <div class="price">$450</div>
+                            <a href="contact.html" class="btn-course">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Advanced Open Water -->
+                <div class="course-card" data-level="advanced">
+                    <div class="course-img" style="background-image: url('https://images.unsplash.com/photo-1534447677768-be436bb09401?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="course-content">
+                        <span class="course-level-tag">Advanced</span>
+                        <h3>Advanced Open Water</h3>
+                        <p>Build confidence and expand your scuba skills through different specialty dives.</p>
+                        
+                        <div class="course-details">
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <div class="detail-text">
+                                    <span class="detail-label">Duration</span>
+                                    <span class="detail-value">2-3 Days</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-water"></i>
+                                <div class="detail-text">
+                                    <span class="detail-label">Max Depth</span>
+                                    <span class="detail-value">30 meters</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-user-graduate"></i>
+                                <div class="detail-text">
+                                    <span class="detail-label">Prerequisites</span>
+                                    <span class="detail-value">Open Water Diver</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-swimmer"></i>
+                                <div class="detail-text">
+                                    <span class="detail-label">Minimum Age</span>
+                                    <span class="detail-value">12 years</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="course-price">
+                            <div class="price">$380</div>
+                            <a href="contact.html" class="btn-course">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Rescue Diver -->
+                <div class="course-card" data-level="advanced">
+                    <div class="course-img" style="background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="course-content">
+                        <span class="course-level-tag">Advanced</span>
+                        <h3>Rescue Diver</h3>
+                        <p>Learn to prevent and manage problems in the water, and become more confident as a diver.</p>
+                        
+                        <div class="course-details">
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <div class="detail-text">
+                                    <span class="detail-label">Duration</span>
+                                    <span class="detail-value">3-4 Days</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-user-graduate"></i>
+                                <div class="detail-text">
+                                    <span class="detail-label">Prerequisites</span>
+                                    <span class="detail-value">Advanced OW + EFR</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <div class="detail-text">
+                                    <span class="detail-label">Focus</span>
+                                    <span class="detail-value">Safety & Rescue</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-swimmer"></i>
+                                <div class="detail-text">
+                                    <span class="detail-label">Minimum Age</span>
+                                    <span class="detail-value">12 years</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="course-price">
+                            <div class="price">$420</div>
+                            <a href="contact.html" class="btn-course">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Divemaster -->
+                <div class="course-card" data-level="professional">
+                    <div class="course-img" style="background-image: url('https://images.unsplash.com/photo-1549944578-5d5d72cf5b8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="course-content">
+                        <span class="course-level-tag">Professional</span>
+                        <h3>Divemaster</h3>
+                        <p>First professional level certification. Learn dive leadership skills and supervise dive activities.</p>
+                        
+                        <div class="course-details">
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <div class="detail-text">
+                                    <span class="detail-label">Duration</span>
+                                    <span class="detail-value">2-4 Weeks</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-user-graduate"></i>
+                                <div class="detail-text">
+                                    <span class="detail-label">Prerequisites</span>
+                                    <span class="detail-value">Rescue Diver + 40 dives</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-user-tie"></i>
+                                <div class="detail-text">
+                                    <span class="detail-label">Focus</span>
+                                    <span class="detail-value">Leadership</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-swimmer"></i>
+                                <div class="detail-text">
+                                    <span class="detail-label">Minimum Age</span>
+                                    <span class="detail-value">18 years</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="course-price">
+                            <div class="price">$950</div>
+                            <a href="contact.html" class="btn-course">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Emergency First Response -->
+                <div class="course-card" data-level="specialty">
+                    <div class="course-img" style="background-image: url('https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="course-content">
+                        <span class="course-level-tag">Specialty</span>
+                        <h3>Emergency First Response</h3>
+                        <p>Primary and secondary care training. Required for Rescue Diver course and valuable for everyone.</p>
+                        
+                        <div class="course-details">
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <div class="detail-text">
+                                    <span class="detail-label">Duration</span>
+                                    <span class="detail-value">1 Day</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-user-graduate"></i>
+                                <div class="detail-text">
+                                    <span class="detail-label">Prerequisites</span>
+                                    <span class="detail-value">None</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-first-aid"></i>
+                                <div class="detail-text">
+                                    <span class="detail-label">Focus</span>
+                                    <span class="detail-value">First Aid & CPR</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-swimmer"></i>
+                                <div class="detail-text">
+                                    <span class="detail-label">Minimum Age</span>
+                                    <span class="detail-value">None</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="course-price">
+                            <div class="price">$150</div>
+                            <a href="contact.html" class="btn-course">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PADI Path Section -->
+    <section class="section padi-path">
+        <div class="container">
+            <div class="section-title">
+                <h2>Your PADI Certification Path</h2>
+                <p>From beginner to professional diver - follow the path</p>
+            </div>
+            
+            <div class="path-container">
+                <div class="path-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Open Water Diver</h3>
+                        <p>Start your journey with the basic certification that allows you to dive to 18 meters with a buddy. Learn essential safety skills and underwater navigation.</p>
+                    </div>
+                </div>
+                
+                <div class="path-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Advanced Open Water</h3>
+                        <p>Build experience and confidence with different types of dives including deep diving, night diving, and underwater navigation.</p>
+                    </div>
+                </div>
+                
+                <div class="path-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Rescue Diver + EFR</h3>
+                        <p>Learn to prevent and manage diving emergencies. This course focuses on problem-solving and emergency management skills.</p>
+                    </div>
+                </div>
+                
+                <div class="path-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Divemaster</h3>
+                        <p>Your first professional level. Learn leadership skills, supervise diving activities, and assist instructors with student divers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialty Courses -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Specialty Courses</h2>
+                <p>Focus on specific areas of interest</p>
+            </div>
+            
+            <div class="specialties-grid">
+                <div class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <h3>Night Diver</h3>
+                    <p>Discover the underwater world after dark. Learn night diving techniques and see nocturnal marine life.</p>
+                </div>
+                
+                <div class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <h3>Wreck Diver</h3>
+                    <p>Explore sunken ships and aircraft. Learn safe wreck penetration techniques and wreck conservation.</p>
+                </div>
+                
+                <div class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Underwater Photographer</h3>
+                    <p>Capture amazing underwater memories. Learn techniques for taking great photos in the underwater environment.</p>
+                </div>
+                
+                <div class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <h3>Fish Identification</h3>
+                    <p>Learn to identify local fish species. Become an underwater naturalist and recognize different marine life.</p>
+                </div>
+                
+                <div class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>Deep Diver</h3>
+                    <p>Explore depths up to 40 meters. Learn deep diving procedures, safety considerations, and planning.</p>
+                </div>
+                
+                <div class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Search & Recovery</h3>
+                    <p>Learn search patterns and recovery techniques for lost objects. Useful skills for underwater cleanup projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about our diving courses</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is the minimum age for diving courses?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>For Discover Scuba Diving and Open Water Diver, the minimum age is 10 years old. Junior certifications are available for ages 10-14, which convert to regular certifications at age 15. Some specialty courses have different age requirements.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do I need to know how to swim?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, basic swimming skills are required. You need to be able to swim 200 meters (or 300 meters with mask, fins, and snorkel) without stopping, and float/tread water for 10 minutes. We'll assess your swimming ability at the start of the course.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How long does certification last?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>PADI certifications are lifetime certifications and never expire. However, if you haven't dived in a while (6-12 months), we recommend taking a Scuba Review or ReActivate program to refresh your skills and knowledge.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is included in the course price?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Course prices include all instruction, PADI certification fees, use of diving equipment during the course, training materials (manual, logbook), and air fills. Transportation, accommodation, and meals are not included unless specified in package deals.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I take the course if I have medical conditions?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Some medical conditions may prevent you from diving. All students must complete a medical questionnaire. If you answer "YES" to any questions, you'll need clearance from a physician. We can provide you with the medical form and guidance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="section">
+        <div class="container">
+            <div class="cta-banner">
+                <h2>Start Your Diving Journey Today</h2>
+                <p>Book your PADI certification course and explore the underwater world</p>
+                <a href="contact.html" class="btn-cta">Contact Us to Book</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-water"></i>
+                        <div class="footer-logo-text">
+                            <div class="footer-logo-main">THALASSA</div>
+                            <div class="footer-logo-sub">DIVE CENTER</div>
+                        </div>
+                    </div>
+                    <p class="footer-description">PADI-certified dive center offering exceptional underwater experiences in Dar es Salaam, Tanzania.</p>
+                    
+                    <div class="social-links">
+                        <a href="https://instagram.com/thalassatz" class="social-link" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-tripadvisor"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="dives.html">Dive Trips</a></li>
+                        <li><a href="snorkeling.html">Snorkeling</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Shop 17C, Maga beach / Slipway area, Masaki, Dar es Salaam</p>
+                        <p><i class="fas fa-phone-alt"></i> +255 769 474 643</p>
+                        <p><i class="fas fa-envelope"></i> info@thalassatz.com</p>
+                        <p><i class="fas fa-clock"></i> Daily: 8:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>PADI Certified</h3>
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                        <i class="fas fa-award" style="font-size: 32px; color: #ff6b35;"></i>
+                        <div>
+                            <p style="opacity: 0.8; font-size: 14px;">PADI Dive Center #S-36457<br>Internationally recognized</p>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn-book" style="display: inline-block; margin-top: 10px;">Book Now</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Thalassa Dive Center. All rights reserved. | PADI is a registered trademark of PADI Worldwide.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenu').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('show');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('navMenu');
+            const menuButton = document.getElementById('mobileMenu');
+            
+            if (!nav.contains(event.target) && !menuButton.contains(event.target)) {
+                nav.classList.remove('show');
+            }
+        });
+
+        // Course Filter
+        const levelButtons = document.querySelectorAll('.level-btn');
+        const courseCards = document.querySelectorAll('.course-card');
+        
+        levelButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                levelButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const level = this.getAttribute('data-level');
+                
+                // Show/hide course cards based on level
+                courseCards.forEach(card => {
+                    if (level === 'all' || card.getAttribute('data-level') === level) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // FAQ Toggle
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', function() {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
